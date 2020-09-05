@@ -1,0 +1,30 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    padding: 23px 20px;
+    position: sticky;
+    
+    &-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    &-item {
+        color: #000000;
+        font-size: 26px;
+        line-height: 100%;
+    }
+}
