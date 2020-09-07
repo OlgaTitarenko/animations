@@ -1,8 +1,13 @@
+* {
+    cursor:none;
+}
 html, body {
     padding: 0;
     margin: 0;
     position: relative;
+    background-color: #fff;
 }
+
 ul {
     list-style: none;
     padding: 0;
@@ -12,19 +17,90 @@ a {
     text-decoration: none;
     color: inherit;
 }
+h2 {
+    margin: 0;
+    padding: 0;
+}
 
 .header {
     padding: 23px 20px;
     position: sticky;
+    top: 0;
+    
+    width: 100vw;
+    box-sizing: border-box;
     
     &-list {
         display: flex;
         align-items: center;
-        justify-content: space-around;
     }
     &-item {
         color: #000000;
         font-size: 26px;
         line-height: 100%;
     }
+    .item-home {
+        width: 19%;
+    }
+    .item-works {
+        width: 65%;
+    }
+    .item-about {
+        text-align: right;
+        width: 10%;
+    }
 }
+
+
+  .cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -50%;
+    left: -50%;
+    margin: -10px 0 0 -10px;
+    border-radius: 50%;
+    background-color: white;
+    backface-visibility: hidden;
+    transition: transform 0.2s ease-out;
+    mix-blend-mode: difference;
+    z-index: 1000;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+  }
+  
+.cursor-hover {
+   transform: scale(2);
+ }
+
+ .slideInUp {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+@-webkit-keyframes slideInUp {
+    0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    }
+} 
