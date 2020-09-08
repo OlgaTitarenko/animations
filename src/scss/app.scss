@@ -1,11 +1,20 @@
+@font-face {
+    font-family: "Akzidenz-Grotesk Pro";
+    src: url("../assets/font/AkzidenzGroteskPro-Ext.eot");
+    src: url("../assets/font/AkzidenzGroteskPro-Ext.woff") format("woff"),
+   }
+
 * {
     cursor:none;
 }
+
 html, body {
     padding: 0;
     margin: 0;
     position: relative;
     background-color: #fff;
+    font-size: 26px;
+    font-family:"Akzidenz-Grotesk Pro", serif;
 }
 
 ul {
@@ -33,6 +42,9 @@ h2 {
     &-list {
         display: flex;
         align-items: center;
+        @media (max-width: 425px) {
+            justify-content: space-between;
+        }
     }
     &-item {
         color: #000000;
@@ -41,18 +53,29 @@ h2 {
     }
     .item-home {
         width: 19%;
+        @media (max-width: 425px) {
+            width: auto;
+        }
     }
     .item-works {
         width: 65%;
+        @media (max-width: 425px) {
+            display: none;
+        }
     }
     .item-about {
         text-align: right;
         width: 10%;
+        @media (max-width: 425px) {
+            width: auto;
+        }
     }
 }
+main {
+    min-height: 100vh;
+}
 
-
-  .cursor {
+.cursor {
     position: absolute;
     width: 20px;
     height: 20px;
@@ -67,13 +90,13 @@ h2 {
     z-index: 1000;
     pointer-events: none;
     transition: transform 0.3s ease;
-  }
+}
   
 .cursor-hover {
    transform: scale(2);
  }
 
- .slideInUp {
+.slideInUp {
     -webkit-animation-name: slideInUp;
     animation-name: slideInUp;
     -webkit-animation-duration: 1s;

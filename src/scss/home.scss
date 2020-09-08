@@ -4,16 +4,34 @@
     padding-right: 20px;
     padding-bottom: 20%;
     box-sizing: border-box;
-   // background-color: #fff;
 
     h2 {
-        font-family: Transgender Grotesk;
         font-style: normal;
         font-weight: normal;
-        font-size: 170px;
+        font-size: 6.5em;
         line-height: 100%;
         color: #000000;
+        
+        @media (max-width: 1440px) {
+            font-size: 5.2em;
+        }
+        @media (max-width: 1024px) {
+            font-size: 3.15em;
+        }
+        
+        @media (max-width: 1024px) {
+            font-size: 3.15em;
+        }
 
+        @media (max-width: 768px) {
+            font-size: 2.9em;
+        }
+        @media (max-width: 600px) {
+            font-size: 1.5em;
+        }
+        @media (max-width: 425px) {
+            font-size: 1em;
+        }
         
     }
 }
