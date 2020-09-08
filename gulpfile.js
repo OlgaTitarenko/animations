@@ -16,19 +16,19 @@ function style() {
     }))
     .pipe(minifyCSS())
     .pipe(concat('styles.css'))
-    .pipe(gulp.dest('./src/dir'))
+    .pipe(gulp.dest('./dir'))
     .pipe(browserSync.stream())
 }
 function script() {
     return gulp.src('./src/js/*.js')
       .pipe(concat('code.js'))
-      .pipe(gulp.dest('./src/dir'))
+      .pipe(gulp.dest('./dir'))
       .pipe(browserSync.stream())
   }
 function watch() {
   browserSync.init({
     server: {
-      baseDir: "./src/"
+      baseDir: "./"
     }
   });
   gulp.watch('./src/scss/*.scss', style);
