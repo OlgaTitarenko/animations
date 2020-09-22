@@ -4,6 +4,7 @@
     padding-right: 20px;
     padding-bottom: 20%;
     box-sizing: border-box;
+    position: relative;
 
     h2 {
         font-style: normal;
@@ -11,6 +12,7 @@
         font-size: 6.5em;
         line-height: 100%;
         color: #000000;
+        display: block;
         
         @media (max-width: 1440px) {
             font-size: 5.2em;
@@ -32,8 +34,53 @@
         @media (max-width: 425px) {
             font-size: 1em;
         }
+
+        span {
+            position: relative;
+            z-index: 1;
+        }
         
     }
+    .element {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        max-width: 940px;
+        z-index: 0;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        transition: all 1.3s linear;
+
+        img {
+            width: 100%;
+        }
+    }
+    .active.element{
+        opacity: 1;
+    }
 }
-
-
+.show {
+   // filter: url(#glitch);
+    animation-name: showBlock;
+}
+.hide {
+    animation-name: hideBlock;
+}
+@keyframes showBlock {
+    0% {
+        filter: url(#glitch);
+    }
+   
+    100% {
+        filter: none;
+    }
+  }
+  @keyframes hideBlock {
+      0% {
+          filter: none;
+      }
+      100% {
+        filter: url(#glitch);
+      }
+  }
