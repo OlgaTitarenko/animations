@@ -1,54 +1,59 @@
 
 let firstTime = -1;
+const link = document.querySelectorAll('h2 > .hover-this');
+const cursor = document.querySelector('.cursor');
+const elements = document.querySelectorAll('.element');
 
-function cursor() {
+function animateit(e) {
+    cursor.classList.add("cursor-hover");
 
-    const link = document.querySelectorAll('h2 > .hover-this');
-    const cursor = document.querySelector('.cursor');
-    const elements = document.querySelectorAll('.element');
+    const index = e.target.dataset.item;
+    const hoverVideo = elements[index].querySelector('video');
 
-    
-    function animateit(e) {
-        cursor.classList.add("cursor-hover");
-
-        const index = e.target.dataset.item;
-
-
-        if (e.type === 'mousemove') {
-            if (elements[index].classList.contains('hide')) {
-                elements[index].classList.remove('hide')
-            }
-            if (firstTime != -1 && firstTime != index) {
-                elements[index].classList.add('show');
-            }
-            elements[index].classList.add('active');
-
+    if (e.type === 'mousemove') {
+        if (elements[index].classList.contains('hide')) {
+            elements[index].classList.remove('hide')
         }
-        if (e.type === 'mouseleave') {
-            cursor.classList.remove("cursor-hover");
-            if (firstTime != -1) {
-                elements[firstTime].classList.add('hide');
-                elements[index].classList.remove('show');
-            }
-            elements[index].classList.remove('active');
-
+        if (firstTime != -1 && firstTime != index) {
+            elements[index].classList.add('show');
         }
-        firstTime = index;
+        elements[index].classList.add('active');
+        if (hoverVideo) {
+            hoverVideo.play();
+        }
     }
-
-    function moveCursor(e) {
-        const { pageX: x, pageY: y } = e;
-        if (!e.target.classList.contains('hover-this')) {
-            if (firstTime !== -1) {
-                elements[firstTime].classList.remove('hide');
-                firstTime = -1;
-            }
-            
+    if (e.type === 'mouseleave') {
+        cursor.classList.remove("cursor-hover");
+        if (firstTime != -1) {
+            elements[firstTime].classList.add('hide');
+            elements[index].classList.remove('show');
         }
-        cursor.style.left = x + 'px';
-        cursor.style.top = y + 'px';
-    
+        elements[index].classList.remove('active');
+        if (hoverVideo) {
+            hoverVideo.pause();
+            hoverVideo.currentTime = 0;
+        }
+       
+
     }
+    firstTime = index;
+}
+
+function moveCursor(e) {
+    const { pageX: x, pageY: y } = e;
+    if (!e.target.classList.contains('hover-this')) {
+        if (firstTime !== -1) {
+            elements[firstTime].classList.remove('hide');
+            firstTime = -1;
+        }
+        
+    }
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+
+}
+
+function mouse() {
 
     link.forEach(b => b.addEventListener('mousemove', animateit));
     link.forEach(b => b.addEventListener('mouseleave', animateit));
@@ -57,7 +62,7 @@ function cursor() {
 
 };
 
-cursor();
+mouse();
 
 function showPage(event) {
     const pages = document.querySelectorAll('main');
@@ -72,7 +77,7 @@ function showPage(event) {
         
     
     //console.log(event.target.dataset.page);
-}
+}/*
 link.forEach(b => b.removeEventListener('mousemove', animateit));
 link.forEach(b => b.removeEventListener('mouseleave', animateit));
-window.removeEventListener('mousemove', moveCursor);
+window.removeEventListener('mousemove', moveCursor);*/

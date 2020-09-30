@@ -46,6 +46,7 @@
         top: 20px;
         right: 20px;
         max-width: 940px;
+        width: 49%;
         z-index: 0;
         opacity: 0;
         animation-duration: 1s;
@@ -53,6 +54,9 @@
         transition: all 1.3s linear;
 
         img {
+            width: 100%;
+        }
+        video {
             width: 100%;
         }
     }
