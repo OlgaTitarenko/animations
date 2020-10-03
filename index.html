@@ -1,12 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
+
     <link rel="stylesheet" href="dir/styles.css">
+    <style>
+        @font-face {
+            font-family: "Akzidenz-Grotesk Pro";
+            src: url("../assets/font/AkzidenzGroteskPro-Ext.eot");
+            src: url("../assets/font/AkzidenzGroteskPro-Ext.woff") format("woff"),
+        }
+
+        * {
+            font-family: "Akzidenz-Grotesk Pro";
+        }
+    </style>
+    <style>
+        .preloader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff;
+            ;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+            z-index: 99999999999999;
+        }
+
+        .preloader_inner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 1em;
+            height: 1em;
+            line-height: 100%;
+            text-align: center;
+            font-size: 6.5em;
+            font-family: "Akzidenz-Grotesk Pro", serif;
+            font-style: normal;
+            font-weight: normal;
+            color: #000000;
+        }
+
+        @media (max-width: 1440px) {
+            .preloader_inner {
+                font-size: 5.2em;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .preloader_inner {
+                font-size: 3.15em;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .preloader_inner {
+                font-size: 3.15em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .preloader_inner {
+                font-size: 2.9em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .preloader_inner {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 425px) {
+            .preloader_inner {
+                font-size: 1em;
+            }
+        }
+
+        .show {
+            visibility: visible !important;
+            opacity: 1 !important;
+            transition: all 0.5s ease;
+        }
+    </style>
 </head>
+
 <body>
+
+    <div class="preloader">
+        <div class="preloader_inner">100</div>
+    </div>
+
+    <script>loader();
+
+        function loader(_success) {
+            var obj = document.querySelector('.preloader'),
+                inner = document.querySelector('.preloader_inner');
+            obj.classList.add('show');
+            var w = 0,
+                t = setInterval(function () {
+                    w = w + 1;
+                    inner.textContent = w;
+                    if (w === 100) {
+                        obj.classList.remove('show');
+
+                        clearInterval(t);
+                        w = 0;
+                        if (_success) {
+                            return _success();
+                        }
+                    }
+                }, 20);
+        }
+    </script>
     <header class="header">
         <ul class="header-list">
             <li class="header-item item-home"><span onclick="showPage(event)" data-page="home">V/S</a></li>
@@ -16,107 +134,76 @@
     </header>
 
     <main class="home-container ">
-        
         <div>
-            <h2><span  class="hover-this" data-item="0" >Modular</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Md_Hover_1x.mp4" autoplay muted loop="true"></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="1" >Tele2</span></h2>
+            <h2><span class="hover-this" data-item="1">Tele2</span></h2>
             <div class="element">
                 <video src="assets/video/hover/Tl_Hover_1x.mp4" loop="true" autoplay muted></video>
             </div>
         </div>
         <div>
-            <h2><span class="hover-this" data-item="2">Roses</span></h2>
-            <div class="element" >
-               <video src="assets/video/hover/Cnc_Hover_1x.mp4" loop="true" autoplay muted></video>
-                    
+            <h2><span class="hover-this" data-item="0">Modular</span></h2>
+            <div class="element">
+                <video src="assets/video/hover/Md_Hover_1x.mp4" autoplay muted loop="true"></video>
+            </div>
+        </div>
+        <div>
+            <h2><span class="hover-this" data-item="2">Concepts'18</span></h2>
+            <div class="element">
+                <video src="assets/video/hover/Cnc_Hover_1x.mp4" loop="true" autoplay muted></video>
             </div>
         </div>
         <div>
             <h2><span class="hover-this" data-item="3"> Kish </span></h2>
-            <div class="element" >
-               <video src="assets/video/hover/Ks_Hover_1x.mp4" loop="true" autoplay muted></video> 
+            <div class="element">
+                <video src="assets/video/hover/Ks_Hover_1x.mp4" loop="true" autoplay muted></video>
             </div>
         </div>
         <div>
             <h2><span class="hover-this" data-item="4"> Quick slim</span></h2>
-            <div class="element" >
-               <video src="assets/video/hover/QS_Hover_1x.mp4" loop="true" autoplay muted></video> 
+            <div class="element">
+                <video src="assets/video/hover/QS_Hover_1x.mp4" loop="true" autoplay muted></video>
             </div>
         </div>
         <div>
-            <h2><span class="hover-this" data-item="5"> COS</span></h2>
-            <div class="element" >
-               <video src="assets/video/hover/Cp_Hover_1x.mp4" loop="true" autoplay muted></video> 
+            <h2><span class="hover-this" data-item="5">Concepts'17</span></h2>
+            <div class="element">
+                <video src="assets/video/hover/Cp_Hover_1x.mp4" loop="true" autoplay muted></video>
             </div>
         </div>
         <div>
             <h2><span class="hover-this" data-item="6"> Pop tube</span></h2>
-            <div class="element" >
-               <video src="assets/video/hover/Pt_Hover_1x.mp4" loop="true" autoplay muted></video> 
+            <div class="element">
+                <video src="assets/video/hover/Pt_Hover_1x.mp4" loop="true" autoplay muted></video>
             </div>
         </div>
-        <div>
-            <h2><span class="hover-this">Lookbook</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Travel norway</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">MOB</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Med exp</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Horizontal</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Instaglam</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Impact music</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Thinkmobiles</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Mountains</span></h2>
-        </div>
-        <div>
-            <h2><span class="hover-this">Easy QA</span></h2>
-        </div>
-    
 
-      
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
                 <filter id="glitch">
-                    
-                    <feTurbulence baseFrequency="0.06,0.036" numOctaves="1" seed="0" type="fractalNoise" x="0%" y="0%" />
+
+                    <feTurbulence baseFrequency="0.06,0.036" numOctaves="1" seed="0" type="fractalNoise" x="0%"
+                        y="0%" />
 
                     <feColorMatrix in="warp" result="huedturb" type="hueRotate" values="90">
                         <animate attributeType="XML" attributeName="values" values="0;180;360" dur="2s"
-                                 repeatCount="indefinite"/>
+                            repeatCount="indefinite" />
                     </feColorMatrix>
-                    
-                      <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="huedturb" x="0%" y="0%"  />
-                      
+
+                    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic"
+                        in2="huedturb" x="0%" y="0%" />
+
                 </filter>
             </defs>
         </svg>
-        
+
     </main>
 
     <main class="works-container " data-page="works" hidden>
         <h2>Modular —
             generative layouts for portfolio</h2>
-            <p>Website creating by dynamic modular grid and 5x2//8x10 ratio. All content isn't commercial and using by presenting purposes</p>
-    
+        <p>Website creating by dynamic modular grid and 5x2//8x10 ratio. All content isn't commercial and using by
+            presenting purposes</p>
+
     </main>
     <main class="about-container " data-page="about" hidden>
         lalalalalalallalalaal
@@ -126,6 +213,7 @@
     <div class="cursor"></div>
 
     <script src="dir/code.js"></script>
-    
+
 </body>
+
 </html>
