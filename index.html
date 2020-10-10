@@ -4,20 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-
+    <title>Vitali Senevych — Digital Designer</title>
+    <meta name="description" content="Vitali Senevych is the digital designer. He creates web & apps services, interactive and visual experience">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="dir/styles.css">
-    <style>
-        @font-face {
-            font-family: "Akzidenz-Grotesk Pro";
-            src: url("../assets/font/AkzidenzGroteskPro-Ext.eot");
-            src: url("../assets/font/AkzidenzGroteskPro-Ext.woff") format("woff"),
-        }
-
-        * {
-            font-family: "Akzidenz-Grotesk Pro";
-        }
-    </style>
+    <link rel="stylesheet" href="https://use.typekit.net/yrl5pxs.css">
     <style>
         .preloader {
             position: absolute;
@@ -125,94 +116,22 @@
                 }, 20);
         }
     </script>
+
     <header class="header">
         <ul class="header-list">
-            <li class="header-item item-home"><span onclick="showPage(event)" data-page="home">V/S</a></li>
-            <li class="header-item item-works"><span onclick="showPage(event)" data-page="works">Works</a></li>
-            <li class="header-item item-about"><span onclick="showPage(event)" data-page="about">About</a></li>
+            <li class="header-item item-home"><a href="#home">V/S</a></li>
+            <li class="header-item item-works"><a href="#works">Works</a></li>
+            <li class="header-item item-about"><a href="#about">About</a></li>
         </ul>
     </header>
+    <div id="app">
 
-    <main class="home-container ">
-        <div>
-            <h2><span class="hover-this" data-item="1">Tele2</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Tl_Hover_1x.mp4" loop="true" autoplay muted></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="0">Modular</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Md_Hover_1x.mp4" autoplay muted loop="true"></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="2">Concepts'18</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Cnc_Hover_1x.mp4" loop="true" autoplay muted></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="3"> Kish </span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Ks_Hover_1x.mp4" loop="true" autoplay muted></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="4"> Quick slim</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/QS_Hover_1x.mp4" loop="true" autoplay muted></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="5">Concepts'17</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Cp_Hover_1x.mp4" loop="true" autoplay muted></video>
-            </div>
-        </div>
-        <div>
-            <h2><span class="hover-this" data-item="6"> Pop tube</span></h2>
-            <div class="element">
-                <video src="assets/video/hover/Pt_Hover_1x.mp4" loop="true" autoplay muted></video>
-            </div>
-        </div>
-
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <defs>
-                <filter id="glitch">
-
-                    <feTurbulence baseFrequency="0.06,0.036" numOctaves="1" seed="0" type="fractalNoise" x="0%"
-                        y="0%" />
-
-                    <feColorMatrix in="warp" result="huedturb" type="hueRotate" values="90">
-                        <animate attributeType="XML" attributeName="values" values="0;180;360" dur="2s"
-                            repeatCount="indefinite" />
-                    </feColorMatrix>
-
-                    <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic"
-                        in2="huedturb" x="0%" y="0%" />
-
-                </filter>
-            </defs>
-        </svg>
-
-    </main>
-
-    <main class="works-container " data-page="works" hidden>
-        <h2>Modular —
-            generative layouts for portfolio</h2>
-        <p>Website creating by dynamic modular grid and 5x2//8x10 ratio. All content isn't commercial and using by
-            presenting purposes</p>
-
-    </main>
-    <main class="about-container " data-page="about" hidden>
-        lalalalalalallalalaal
-    </main>
-
-
+    </div>
+   
     <div class="cursor"></div>
-
-    <script src="dir/code.js"></script>
+    <script src="dir/route.js"></script>
+    <script src="dir/router.js"></script>
+    <script src="dir/code.js" defer></script>
 
 </body>
 

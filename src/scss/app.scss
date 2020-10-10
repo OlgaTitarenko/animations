@@ -1,6 +1,7 @@
 
 * {
     cursor:none;
+    font-family: "Akzidenz-Grotesk Pro";
 }
 
 html, body {
@@ -10,6 +11,7 @@ html, body {
     background-color: #fff;
     font-size: 26px;
     font-family:"Akzidenz-Grotesk Pro", serif;
+    overflow-x: hidden;
 }
 
 ul {
@@ -30,7 +32,7 @@ h2 {
     padding: 23px 20px;
     position: sticky;
     top: 0;
-    
+    z-index: 10;
     width: 100vw;
     box-sizing: border-box;
     
