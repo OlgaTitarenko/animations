@@ -16,13 +16,13 @@ function style() {
     }))
     .pipe(minifyCSS())
     .pipe(concat('styles.css'))
-    .pipe(gulp.dest('./dir'))
+    .pipe(gulp.dest('./assets/css'))
     .pipe(browserSync.stream())
 }
 function script() {
     return gulp.src('./src/js/*.js')
       .pipe(concat('code.js'))
-      .pipe(gulp.dest('./dir'))
+      .pipe(gulp.dest('./assets/js'))
       .pipe(browserSync.stream())
   }
 function watch() {

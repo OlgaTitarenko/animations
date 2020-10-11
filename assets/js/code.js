@@ -63,9 +63,9 @@
     
             }
         }
-        window.removeEventListener('mousemove', moveCursorHome);
         link.forEach(b => b.removeEventListener('mousemove', animateit));
         link.forEach(b => b.removeEventListener('mouseleave', animateit));
+        window.removeEventListener('mousemove', moveCursorHome);
 
 
         link.forEach(b => b.addEventListener('mousemove', animateit));
@@ -73,11 +73,41 @@
         window.addEventListener('mousemove', moveCursorHome);
     }
 
+    function aboutFunction() {
+        const main = app.querySelector('main');
+        const link = main.querySelectorAll('a');
+        const imageP = main.querySelector('#parallax-img');
+
+        function animateit(e) {
+            cursor.classList.add("cursor-hover");
+            if (e.type === 'mouseleave') {
+                cursor.classList.remove("cursor-hover");
+            }
+        }
+
+        function parallaxImg() {
+            const value = window.scrollY;
+            imageP.style.top = 0.6*value + 'px';
+        }
+        link.forEach(b => b.removeEventListener('mousemove', animateit));
+        link.forEach(b => b.removeEventListener('mouseleave', animateit));
+        window.removeEventListener('scroll',parallaxImg);
+
+        link.forEach(b => b.addEventListener('mousemove', animateit));
+        link.forEach(b => b.addEventListener('mouseleave', animateit));
+        window.addEventListener('scroll',parallaxImg);
+       
+    }
+    
     function checkPage() {
         const main = app.querySelector('main');
         if (main.classList.contains('home-container')) {
             homeFunction();
         }
+        if (main.classList.contains('about-container')) {
+            aboutFunction();
+        }
+
     }
 
     const app = document.getElementById('app');
