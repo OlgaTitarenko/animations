@@ -1,6 +1,7 @@
 'use stict';
 
 function Route(name, htmlName, defaultRoute) {
+    console.log(htmlName);
     try {
         if(!name || !htmlName) {
             throw 'error: name and htmlName params are mandatories';

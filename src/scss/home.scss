@@ -12,6 +12,8 @@
         line-height: 100%;
         color: #000000;
         display: block;
+        position: relative;
+        z-index: 2;
         
         @media (max-width: 1440px) {
             font-size: 5.2em;

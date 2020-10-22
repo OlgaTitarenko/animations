@@ -1,6 +1,4 @@
 const gulp = require('gulp');
-
-var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-clean-css');
@@ -15,28 +13,17 @@ function style() {
       cascade: false
     }))
     .pipe(minifyCSS())
-    .pipe(concat('styles.css'))
-    .pipe(gulp.dest('./assets/css'))
-    .pipe(browserSync.stream())
+    .pipe(concat('index.css'))
+    .pipe(gulp.dest('./frontend/static/css'))
 }
-function script() {
-    return gulp.src('./src/js/*.js')
-      .pipe(concat('code.js'))
-      .pipe(gulp.dest('./assets/js'))
-      .pipe(browserSync.stream())
-  }
+
 function watch() {
-  browserSync.init({
-    server: {
-      baseDir: "./"
-    }
-  });
+ 
   gulp.watch('./src/scss/*.scss', style);
-  gulp.watch('./src/js/*.js', script);
+
 }
 
 exports.style = style;
-exports.script = script;
 exports.watch = watch;
 
 /*

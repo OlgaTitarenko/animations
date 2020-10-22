@@ -6,7 +6,8 @@
         var router = new Router([
             new Route('home', 'home.html', true),
             new Route('about', 'about.html'),
-            new Route('works', 'works.html')
+            new Route('works?:id', 'works.html'),
+
         ]);
 
     }
@@ -98,6 +99,45 @@
         window.addEventListener('scroll',parallaxImg);
        
     }
+
+    function worksFunction() {
+        const main = app.querySelector('main');
+        const prev = main.querySelector('.prev');
+        const next = main.querySelector('.next');
+        let slideIndex = 1;
+
+        showSlides(slideIndex);
+        prev.removeEventListener('click', minusSlides);
+        next.removeEventListener('click', plusSlides);
+
+        prev.addEventListener('click', minusSlides);
+        next.addEventListener('click', plusSlides);
+    
+        function plusSlides() {
+            showSlides(slideIndex += 1);
+        }
+        function minusSlides() {
+            showSlides(slideIndex -= 1);
+        }
+    
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+            var i;
+            var slides = main.getElementsByClassName("mySlides");
+            console.log(slides);
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+      
+            slides[slideIndex-1].style.display = "block";  
+        }
+
+    }
     
     function checkPage() {
         const main = app.querySelector('main');
@@ -106,6 +146,9 @@
         }
         if (main.classList.contains('about-container')) {
             aboutFunction();
+        }
+        if (main.classList.contains('works-container')) {
+            worksFunction();
         }
 
     }
