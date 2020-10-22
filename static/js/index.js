@@ -51,6 +51,7 @@ const router = async () => {
     });
 
     let match = potentialMatches.find(potentialMatche => potentialMatche.result !== null);
+   
     if (!match) {
      match = {
          route: routes[0],
