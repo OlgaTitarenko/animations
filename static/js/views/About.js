@@ -17,7 +17,8 @@ export default class extends AbstractView {
         window.addEventListener('scroll',parallaxImg);
        
     }
-
+    
+                 
     async getHtml() {
         return `
         <main class="about-container slideInUp" data-page="about">
@@ -25,13 +26,13 @@ export default class extends AbstractView {
             <img src="./static/assets/img/mount.png" alt="" id='parallax-img'>
         </div>
         <div class="about-text">
-            <p><span class="about-text-space"></span>Vitali Senevych is an interface designer interested in culture, brutalism,
-                and motion.
+            <p><span class="about-text-space"></span>Vitali Senevych is
+            the digital designer interested
+            in pop-culture, alternatives, music
+            and motion.
             </p>
             <p><span class="about-text-space"></span>
-                He creates services, interactive
-                and visual experience to fill this empty space.
-                He works at the Alty, where he collaborates with equally passionate people on large-scale projects.
+                He creates web & apps services, interactive and visual experience to fill that empty space. He works at the Alty, where he collaborates with equally passionate people on saucy projects.    
             </p>
         </div>
         <div class="about-text">

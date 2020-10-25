@@ -14,7 +14,7 @@ function style() {
     }))
     .pipe(minifyCSS())
     .pipe(concat('index.css'))
-    .pipe(gulp.dest('./frontend/static/css'))
+    .pipe(gulp.dest('./static/css'))
 }
 
 function watch() {

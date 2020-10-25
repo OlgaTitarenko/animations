@@ -31,6 +31,7 @@ a {
 h2 {
     margin: 0;
     padding: 0;
+    mix-blend-mode: difference;
 }
 
 .header {
@@ -41,6 +42,8 @@ h2 {
     z-index: 10;
     width: 100vw;
     box-sizing: border-box;
+    color: white;
+    mix-blend-mode: difference;
     
     &-list {
         display: flex;
@@ -50,25 +53,25 @@ h2 {
         }
     }
     &-item {
-        color: #000000;
         font-size: 26px;
         line-height: 100%;
     }
     .item-home {
-        width: 19%;
+        width: 18vw;
         @media (max-width: 425px) {
             width: auto;
         }
     }
     .item-works {
-        width: 65%;
+        width: 41vw;
+        padding-left: 5px;
         @media (max-width: 425px) {
             display: none;
         }
     }
     .item-about {
         text-align: right;
-        width: 10%;
+        width: 41vw;
         @media (max-width: 425px) {
             width: auto;
         }

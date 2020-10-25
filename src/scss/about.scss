@@ -3,6 +3,7 @@
     width: 100vw;
     box-sizing: border-box;
     position: relative;
+    background-color: #fff;
 }
 .about-image {
     margin-bottom: 45px;
@@ -25,10 +26,10 @@
     img {
        position: absolute;
        top: 0;
-       left: 19%;
-       width: 81%;
+       left: 18vw;
+       width: 80vw;
        height: 100%;
-       object-fit: contain;
+       object-fit: cover;
        pointer-events: none;
        z-index: 0;
        @media (max-width: 768px ) {
@@ -43,12 +44,15 @@
     width: 81%;
     position: relative;
     z-index: 2;
+    color: white;
+    mix-blend-mode: difference;
+
     @media (max-width: 1024px) {
         width: 100%;
     }
     
     &-space {
-        width: 19%;
+        width: 18vw;
         display: inline-block;
     }
 

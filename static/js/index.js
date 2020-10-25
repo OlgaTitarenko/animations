@@ -5,18 +5,25 @@ import Works from './views/Works.js';
 const cursor = document.querySelector('.cursor');
 
 function moveCursor(e) {
+    console.log(e.pageY, e.screenY);
     const { pageX: x, pageY: y } = e;
    
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
 
 }
+function scrollCursor(e) {
+    console.log(e.pageX, e.screenY);
+}
 function mouse() {
     window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('scroll',moveCursor);
 };
-window.removeEventListener('mousemove', moveCursor);
 
+window.removeEventListener('mousemove', moveCursor);
+window.removeEventListener('scroll', moveCursor);
 mouse();
+
 
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
