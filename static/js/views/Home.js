@@ -66,7 +66,7 @@ export default class extends AbstractView {
     }
     async getHtml() {
         return `
-        <main class="home-container slideInUp">
+        <main class="home-container">
     <div>
         <h2><a href="/works/1" class="hover-this" data-item="1">Tele2</a></h2>
         <div class="element">

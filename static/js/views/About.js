@@ -31,13 +31,11 @@ export default class extends AbstractView {
             in pop-culture, alternatives, music
             and motion.
             </p>
-            <p><span class="about-text-space"></span>
-                He creates web & apps services, interactive and visual experience to fill that empty space. He works at the Alty, where he collaborates with equally passionate people on saucy projects.    
+            <p><span class="about-text-space"></span>He creates web & apps services, interactive and visual experience to fill that empty space. He works at the Alty, where he collaborates with equally passionate people on saucy projects.    
             </p>
         </div>
         <div class="about-text">
-            <h2><span class="about-text-space"></span>
-                Awards & Achievements
+            <h2><span class="about-text-space"></span>Awards & Achievements
             </h2>
             <p>
                 behance — pop tube
@@ -59,8 +57,7 @@ export default class extends AbstractView {
             </p>
         </div>
         <div class="about-text about-text_links">
-            <h2><span class="about-text-space"></span>
-                Contacts
+            <h2><span class="about-text-space"></span>Contacts
             </h2>
             <p>
                 <a href="mailto:vs@senevych.design" target="_blank"> vs@senevych.design </a>

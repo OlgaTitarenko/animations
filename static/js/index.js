@@ -5,15 +5,14 @@ import Works from './views/Works.js';
 const cursor = document.querySelector('.cursor');
 
 function moveCursor(e) {
-    console.log(e.pageY, e.screenY);
-    const { pageX: x, pageY: y } = e;
-   
+    const { clientX: x, clientY: y } = e;
+
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
 
 }
 function scrollCursor(e) {
-    console.log(e.pageX, e.screenY);
+  
 }
 function mouse() {
     window.addEventListener('mousemove', moveCursor);
@@ -37,6 +36,7 @@ const getParams = match => {
     }))
 }
 const navigateTo = url => {
+  document.querySelector('#app').classList.remove('hide')
     history.pushState(null, null, url);
     router();
 }
@@ -82,7 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click" , e => {
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
-            navigateTo(e.target.href);
+            document.querySelector('#app').classList.add('hide');
+            setTimeout(() => navigateTo(e.target.href), 1000);
         }
     })
     router();

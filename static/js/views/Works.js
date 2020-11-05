@@ -16,9 +16,34 @@ export default class extends AbstractView {
     }
     getPrew = () => {
         if (this.params.id == '1') {
-            return '7'
+            return 7;
         }
         return +this.params.id - 1
+    }
+    getVIdeo(item) {
+        switch (item) {
+            case 1: 
+                return `<video src="/static/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`
+                break;
+            case 2 :
+                return `<video src="/static/assets/works/md_1.mp4" autoplay muted loop="true"></video>`
+                break;
+            case 3 : 
+                return `<video src="/static/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`
+                break;
+            case 4 : 
+                return `<video src="/static/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`
+                break;
+            case 5: 
+                return `<video src="/static/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`
+                break;
+            case 6 : 
+                return `<video src="/static/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`
+                break;
+            case 7: 
+                return `<video src="/static/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`
+                break;
+        }
     }
     modular = () => {
         return `
@@ -34,12 +59,8 @@ export default class extends AbstractView {
             <video src="/static/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
         <div class="about-text">
-            <h2><span class="about-text-space"></span>
-                Role: UX/UI Design, Animation 
-            </h2>
-            <h2><span class="about-text-space"></span>
-            2019
-            </h2>
+            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+            <h2><span class="about-text-space"></span>2019</h2>
         </div>
         `
     }
@@ -57,15 +78,9 @@ export default class extends AbstractView {
             <img src="/static/assets/works/Tl_4.png" alt="" />
         </div>
         <div class="about-text">
-            <h2><span class="about-text-space"></span>
-                Agency: Nullgravity
-            </h2>
-            <h2><span class="about-text-space"></span>
-                Role: UX/UI Design, Animation 
-            </h2>
-            <h2><span class="about-text-space"></span>
-            2018
-            </h2>
+            <h2><span class="about-text-space"></span>Agency: Nullgravity</h2>
+            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+            <h2><span class="about-text-space"></span>2018</h2>
         </div>
         `
     }
@@ -84,12 +99,8 @@ export default class extends AbstractView {
             <img src="/static/assets/works/Cnc_5.png" alt="" />
         </div>
         <div class="about-text">
-            <h2><span class="about-text-space"></span>
-                Role: UX/UI Design, Animation 
-            </h2>
-            <h2><span class="about-text-space"></span>
-                2018
-            </h2>
+            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+            <h2><span class="about-text-space"></span>2018</h2>
         </div>
         `
     }
@@ -108,12 +119,8 @@ export default class extends AbstractView {
             
         </div>
         <div class="about-text">
-            <h2><span class="about-text-space"></span>
-                Role: UX/UI Design, Animation 
-            </h2>
-            <h2><span class="about-text-space"></span>
-                2017
-            </h2>
+            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+            <h2><span class="about-text-space"></span>2017</h2>
         </div>
         `
     }
@@ -130,16 +137,10 @@ export default class extends AbstractView {
             <img src="/static/assets/works/QS_3.png" alt="" />
         </div>
         <div class="about-text">
-        <h2><span class="about-text-space"></span>
-            Agency: Thinkmobiles
-        </h2>
-        <h2><span class="about-text-space"></span>
-            Role: UX/UI Design, Animation 
-        </h2>
-        <h2><span class="about-text-space"></span>
-            2017
-        </h2>
-    </div>
+          <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
+          <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+          <h2><span class="about-text-space"></span>2017</h2>
+        </div>
         `
     }
     conc17 = () => {
@@ -156,15 +157,10 @@ export default class extends AbstractView {
             <img src="/static/assets/works/Cp_4.png" alt="" />
         </div>
         <div class="about-text">
-        <h2><span class="about-text-space"></span>
-            Agency: Thinkmobiles
-        </h2>
-        <h2><span class="about-text-space"></span>
-            Role: UX/UI Design, Animation 
-        </h2>
-        <h2><span class="about-text-space"></span>
-            2017
-        </h2>
+          <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
+          <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+          <h2><span class="about-text-space"></span>2017</h2>
+        </div>
         `
     }
     popTube = () => {
@@ -181,15 +177,10 @@ export default class extends AbstractView {
             <img src="/static/assets/works/Pt_4.png" alt="" />
         </div>
         <div class="about-text">
-        <h2><span class="about-text-space"></span>
-            Agency: Thinkmobiles
-        </h2>
-        <h2><span class="about-text-space"></span>
-            Role: UX/UI Design, Animation 
-        </h2>
-        <h2><span class="about-text-space"></span>
-            2016
-        </h2>
+          <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
+          <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
+          <h2><span class="about-text-space"></span>2016</h2>
+        </div>
         `
     }
     getSlide = () => {
@@ -225,14 +216,22 @@ export default class extends AbstractView {
             ${this.getSlide()}
 
             <div class="works-nav">
+           
             <a href="/works/${this.getPrew()}" class="works-nav-prew">
+            <div class="works-nav-prew-video">
+                ${this.getVIdeo(this.getPrew())}
+            </div>
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.513 5.63763e-06C17.9745 5.28775 15.5997 9.25357 13.3887 11.8974L85 11.8974L85 17.1026L13.3887 17.1026C15.5997 19.7464 17.9745 23.7123 20.513 29L16.2139 29C11.0549 22.9687 5.65029 18.5071 -1.17012e-06 15.6154L-1.36514e-06 13.3846C5.65029 10.5755 11.0549 6.11397 16.2139 6.01347e-06L20.513 5.63763e-06Z" fill="white"/>
               </svg>
               <span>Prew</span>
+              
             </a>
             <a href="/works/${this.getNext()}" class="works-nav-next">
-              <span>Next</span>
+            <div class="works-nav-next-video">
+                ${this.getVIdeo(this.getNext())}
+            </div>  
+            <span>Next</span>
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M64.487 29C67.0255 23.7123 69.4003 19.7464 71.6113 17.1026L0 17.1026L0 11.8974L71.6113 11.8974C69.4003 9.25356 67.0255 5.28775 64.487 0L68.7861 0C73.9451 6.03134 79.3497 10.4929 85 13.3846V15.6154C79.3497 18.4245 73.9451 22.886 68.7861 29H64.487Z" fill="white"/>
                 </svg>
@@ -242,7 +241,5 @@ export default class extends AbstractView {
           
         </main>
         `
-
-
     }
 }
