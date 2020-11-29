@@ -6,21 +6,24 @@ const cursor = document.querySelector('.cursor');
 
 function moveCursor(e) {
     const { clientX: x, clientY: y } = e;
+    if (cursor.hidden) {
+      cursor.hidden = false;
+    }
 
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
 
 }
 function scrollCursor(e) {
-  
+  cursor.hidden = true;
 }
 function mouse() {
     window.addEventListener('mousemove', moveCursor);
-    window.addEventListener('scroll',moveCursor);
+    window.addEventListener('scroll',scrollCursor);
 };
 
 window.removeEventListener('mousemove', moveCursor);
-window.removeEventListener('scroll', moveCursor);
+window.removeEventListener('scroll', scrollCursor);
 mouse();
 
 

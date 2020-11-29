@@ -1,135 +1,392 @@
 import AbstractView from './AbstractView.js';
 
 export default class extends AbstractView {
-    constructor(params) {
-        super(params);
-    }
-    mainFunction = () =>  {
-        this.cursorAnimation();
-        let firstTime = -1;
-        const link = document.querySelectorAll('h2 > .hover-this');
-        const elements = document.querySelectorAll('.element');
-        const cursor = document.querySelector('.cursor');
+  constructor(params) {
+    super(params);
+  }
+  mainFunction = () => {
+    this.cursorAnimation();
+    this.hoverVideo();
+    // let firstTime = -1;
+    // const link = document.querySelectorAll('h2 > .hover-this');
+    // const elements = document.querySelectorAll('.element');
+    // const cursor = document.querySelector('.cursor');
 
-        const animateit = (e) => {
-           
-    
-            const index = e.target.dataset.item;
-            const hoverVideo = elements[index].querySelector('video');
-    
-            if (e.type === 'mousemove') {
-                if (elements[index].classList.contains('hide')) {
-                    elements[index].classList.remove('hide')
-                }
-                if (firstTime != -1 && firstTime != index) {
-                    elements[index].classList.add('show');
-                }
-                elements[index].classList.add('active');
-                if (hoverVideo) {
-                    hoverVideo.play();
-                }
+    // const animateit = (e) => {
+    //     const index = e.target.dataset.item;
+    //     const hoverVideo = elements[index].querySelector('video');
+
+    //     if (e.type === 'mousemove') {
+    //         if (elements[index].classList.contains('hide')) {
+    //             elements[index].classList.remove('hide')
+    //         }
+    //         if (firstTime != -1 && firstTime != index) {
+    //             elements[index].classList.add('show');
+    //         }
+    //         elements[index].classList.add('active');
+    //         if (hoverVideo) {
+    //             hoverVideo.play();
+    //         }
+    //     }
+    //     if (e.type === 'mouseleave') {
+
+    //         if (firstTime != -1) {
+    //             elements[firstTime].classList.add('hide');
+    //             elements[index].classList.remove('show');
+    //         }
+    //         elements[index].classList.remove('active');
+    //         if (hoverVideo) {
+    //             hoverVideo.pause();
+    //             hoverVideo.currentTime = 0;
+    //         }
+
+
+    //     }
+    //     firstTime = index;
+    // }
+    // const moveCursorHome = (e) => {
+    //     if (!e.target.classList.contains('hover-this')) {
+    //         if (firstTime !== -1) {
+    //             elements[firstTime].classList.remove('hide');
+    //             firstTime = -1;
+    //         }
+    //     }
+    // }
+
+    // link.forEach(b => b.removeEventListener('mousemove', animateit));
+    // link.forEach(b => b.removeEventListener('mouseleave', animateit));
+    // window.removeEventListener('mousemove', moveCursorHome);
+
+
+    // link.forEach(b => b.addEventListener('mousemove', animateit));
+    // link.forEach(b => b.addEventListener('mouseleave', animateit));
+    // window.addEventListener('mousemove', moveCursorHome);
+
+  }
+
+  hoverVideo() {
+    let activeTexture = -1;
+    let transitionTimer = 0;
+    let to = 0;
+    let from = 0;
+    let first = false;
+
+    const list = document.querySelectorAll('.hover-this');
+
+    // set up our WebGL context and append the canvas to our wrapper
+    const curtains = new Curtains({
+      container: "canvas",
+      watchScroll: false, // no need to listen for the scroll in this example
+      pixelRatio: Math.min(1.5, window.devicePixelRatio) // limit pixel ratio for performance
+    });
+
+    // handling errors
+    curtains.onError(() => {
+      // we will add a class to the document body
+      document.body.classList.add("no-curtains", "curtains-ready");
+
+      // display an error message
+      document.getElementById("enter-site").innerHTML = "There has been an error while initiating the WebGL context.";
+    }).onContextLost(() => {
+      // on context lost, try to restore the context
+      curtains.restoreContext();
+    });
+
+    // get our plane element
+    const planeElements = document.getElementsByClassName("multi-textures");
+
+    const vs = `
+          precision mediump float;
+          // default mandatory variables
+          attribute vec3 aVertexPosition;
+          attribute vec2 aTextureCoord;
+          uniform mat4 uMVMatrix;
+          uniform mat4 uPMatrix;
+          // our texture matrices
+          // displacement texture does not need to use them
+          uniform mat4 firstTextureMatrix;
+          uniform mat4 secondTextureMatrix;
+          // custom variables
+          varying vec3 vVertexPosition;
+          varying vec2 vTextureCoord;
+          varying vec2 vFirstTextureCoord;
+          varying vec2 vSecondTextureCoord;
+          // custom uniforms
+          uniform float uTransitionTimer;
+          void main() {
+              gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+              // varyings
+              // use original texture coords for our displacement
+              vTextureCoord = aTextureCoord;
+              // use texture matrices for our videos
+              vFirstTextureCoord = (firstTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy;
+              vSecondTextureCoord = (secondTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy;
+              vVertexPosition = aVertexPosition;
+          }
+      `;
+
+    const fs = `
+          precision mediump float;
+          varying vec3 vVertexPosition;
+          varying vec2 vTextureCoord;
+          varying vec2 vFirstTextureCoord;
+          varying vec2 vSecondTextureCoord;
+          // custom uniforms
+          uniform float uTransitionTimer;
+          uniform float uFrom;
+          uniform float uTo;
+          // our textures samplers
+          // notice how it matches our data-sampler attributes
+          uniform sampler2D firstTexture;
+          uniform sampler2D secondTexture;
+          uniform sampler2D thirdTexture;
+          uniform sampler2D fourthTexture;
+          uniform sampler2D fifthTexture;
+          uniform sampler2D sixthTexture;
+          uniform sampler2D seventhTexture;
+          uniform sampler2D displacement;
+
+          vec4 getTextureByIndex(float index, vec2 vUv){
+            vec4 result;
+            if(index==0.){
+                result = texture2D(firstTexture,vUv);
             }
-            if (e.type === 'mouseleave') {
-                
-                if (firstTime != -1) {
-                    elements[firstTime].classList.add('hide');
-                    elements[index].classList.remove('show');
-                }
-                elements[index].classList.remove('active');
-                if (hoverVideo) {
-                    hoverVideo.pause();
-                    hoverVideo.currentTime = 0;
-                }
-    
-    
+            if(index==1.){
+                result = texture2D(secondTexture,vUv);
             }
-            firstTime = index;
+            if(index==2.){
+                result = texture2D(thirdTexture,vUv);
+            }
+            if(index==3.){
+              result = texture2D(fourthTexture,vUv);
+            }
+            if(index==4.){
+              result = texture2D(fifthTexture,vUv);
+            }
+            if(index==5.){
+              result = texture2D(sixthTexture,vUv);
+            }
+            if(index==6.){
+              result = texture2D(seventhTexture,vUv);
+            }
+            return result;
         }
-        const moveCursorHome = (e) => {
-            if (!e.target.classList.contains('hover-this')) {
-                if (firstTime !== -1) {
-                    elements[firstTime].classList.remove('hide');
-                    firstTime = -1;
-                }
-            }
+
+
+          void main() {
+              // our displacement texture
+              // i'll be using the fragment shader seen here : https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/
+              vec4 displacementTexture = texture2D(displacement, vTextureCoord);
+              float displacementFactor = (cos(uTransitionTimer / (60.0 / 3.141592)) + 1.0) / 2.0;
+              float effectFactor = 1.0;
+              
+              vec2 firstDisplacementCoords = vec2(vFirstTextureCoord.x - (1.0 - displacementFactor) * (displacementTexture.r * effectFactor), vFirstTextureCoord.y);
+              vec2 secondDisplacementCoords = vec2(vSecondTextureCoord.x + displacementFactor * (displacementTexture.r * effectFactor), vSecondTextureCoord.y);
+              vec4 firstDistortedColor = getTextureByIndex(uFrom, firstDisplacementCoords);
+              vec4 secondDistortedColor = getTextureByIndex(uTo, secondDisplacementCoords);
+              vec4 finalColor = mix(secondDistortedColor, firstDistortedColor, displacementFactor);
+              // handling premultiplied alpha
+              finalColor = vec4(finalColor.rgb * finalColor.a, finalColor.a);
+              gl_FragColor = finalColor;
+          }
+      `;
+
+    // some basic parameters
+    const params = {
+      vertexShader: vs,
+      fragmentShader: fs,
+      uniforms: {
+        transitionTimer: {
+          name: "uTransitionTimer",
+          type: "1f",
+          value: 0,
+        },
+        from: {
+          name: "uFrom",
+          type: "1f",
+          value: 0,
+        },
+        to: {
+          name: "uTo",
+          type: "1f",
+          value: 0,
         }
+      }
+    };
 
-        link.forEach(b => b.removeEventListener('mousemove', animateit));
-        link.forEach(b => b.removeEventListener('mouseleave', animateit));
-        window.removeEventListener('mousemove', moveCursorHome);
+    const multiTexturesPlane = new Plane(curtains, planeElements[0], params);
+
+    // create our plane
+    multiTexturesPlane.onReady(() => {
+      // display the button
+      document.body.classList.add("curtains-ready");
+
+      // click to play the videos
+      // document.getElementById("enter-site").addEventListener("click", () => {
+      //     // display canvas and hide the button
+
+      //     document.body.classList.add("video-started");
+
+      //     // play all videos to force uploading the first frame of each texture
+      //     multiTexturesPlane.playVideos();
+      //     transitionTimer = 0;
+      //     isPlaying = true;
+
+      //     // wait a tick and pause the second video (the one that is hidden)
+      //     curtains.nextRender(() => {
+      //         multiTexturesPlane.videos.forEach((video, key) => {
+      //           if (key !== activeTexture) {
+      //             video.pause();
+      //           }
+      //         });
+      //     });
+      // }, false);
+
+      function animateVideo(event) {
+        if (activeTexture === -1) {
+          document.body.classList.add("video-started");
+          activeTexture = +event.target.dataset.item;
+
+          multiTexturesPlane.playVideos();
+          transitionTimer = 0;
+
+          multiTexturesPlane.uniforms.to.value = activeTexture;
+          curtains.nextRender(() => {
+            multiTexturesPlane.videos.forEach((video, key) => {
+              if (key !== activeTexture) {
+                video.pause();
+              }
+            });
+          });
+        } else {
+          if (activeTexture === +event.target.dataset.item) {
+            return null;
+          }
+
+          from = activeTexture;
+          multiTexturesPlane.uniforms.from.value = activeTexture;
+
+          activeTexture = +event.target.dataset.item;
+          // transitionTimer = 0;
+          multiTexturesPlane.uniforms.to.value = activeTexture;
+          first = true;
+          multiTexturesPlane.videos[activeTexture].play();
+        }
+      }
+      function hideVideo(event) {
+        if (event.target.classList.contains('hover-this')) {
+          return null;
+        }
+        if (activeTexture !== -1) {
+          document.body.classList.remove("video-started");
+          activeTexture = -1;
+        }
+      }
+
+      list.forEach(item => {
+        item.removeEventListener("mousemove", animateVideo)
+      });
+
+      list.forEach(item => {
+        item.addEventListener("mousemove", animateVideo)
+      });
+      document.querySelector('.home-container').addEventListener('mousemove', hideVideo)
 
 
-        link.forEach(b => b.addEventListener('mousemove', animateit));
-        link.forEach(b => b.addEventListener('mouseleave', animateit));
-        window.addEventListener('mousemove', moveCursorHome);
+    }).onRender(() => {
 
-    }
-    async getHtml() {
-        return `
+      // if(activeTexture === 1) {
+      //     // lerp values to smoothen animation
+      //     transitionTimer = (1 - 0.05) * transitionTimer + 0.05 * 60;
+
+      //     // transition is over, pause previous video
+      //     if(transitionTimer >= 59 && transitionTimer !== 60) {
+      //         transitionTimer = 60;
+      //         multiTexturesPlane.videos[0].pause();
+      //     }
+      // }
+      // else {
+      //     // lerp values to smoothen animation
+      //     transitionTimer = (1 - 0.05) * transitionTimer;
+
+      //     // transition is over, pause previous video
+      //     if(transitionTimer <= 1 && transitionTimer !== 0) {
+      //         transitionTimer = 0;
+      //         multiTexturesPlane.videos[1].pause();
+      //     }
+      // }
+
+      // update our transition timer uniform
+
+      if (first && transitionTimer === 60) {
+        first = false;
+        transitionTimer = 0;
+      }
+      transitionTimer = (1 - 0.05) * transitionTimer + 0.05 * 60;
+
+      // transition is over, pause previous video
+      if (transitionTimer >= 59 && transitionTimer !== 60) {
+        transitionTimer = 60;
+        multiTexturesPlane.videos.forEach((video, key) => {
+          if (key !== activeTexture) {
+            video.pause();
+          }
+        });
+      }
+
+      multiTexturesPlane.uniforms.transitionTimer.value = transitionTimer;
+    });
+  }
+
+  async getHtml() {
+    return `
         <main class="home-container">
-    <div>
-        <h2><a href="/works/1" class="hover-this" data-item="1">Tele2</a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/Md_Hover_1x.mp4" autoplay muted loop="true"></video>
-        </div>
-    </div>
-    <div>
-        <h2><a href="/works/2" class="hover-this" data-item="0">Modular</a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/Tl_Hover_1x.mp4" loop="true" autoplay muted></video>
-        </div>
-    </div>
-    <div>
-        <h2><a href="/works/3" class="hover-this" data-item="2">Concepts'18</a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/Cnc_Hover_1x.mp4" loop="true" autoplay muted></video>
-        </div>
-    </div>
-    <div>
-        <h2><a href="/works/4" class="hover-this" data-item="3"> Kish </a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/Ks_Hover_1x.mp4" loop="true" autoplay muted></video>
-        </div>
-    </div>
-    <div>
-        <h2><a href="/works/5" class="hover-this" data-item="4"> Quick slim</a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/QS_Hover_1x.mp4" loop="true" autoplay muted></video>
-        </div>
-    </div>
-    <div>
-        <h2><a href="/works/6" class="hover-this" data-item="5">Concepts'17</a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/Cp_Hover_1x.mp4" loop="true" autoplay muted></video>
-        </div>
-    </div>
-    <div>
-        <h2><a href="/works/7" class="hover-this" data-item="6"> Pop tube</a></h2>
-        <div class="element">
-            <video src="./static/assets/video/hover/Pt_Hover_1x.mp4" loop="true" autoplay muted></video>
-        </div>
-    </div>
+          <div id="page-wrap">
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-        <defs>
-            <filter id="glitch">
+            <div id="canvas"></div>
 
-                <feTurbulence baseFrequency="0.06,0.036" numOctaves="1" seed="0" type="fractalNoise" x="0%"
-                    y="0%" />
+            <div class="list">
+              <h2>
+                <a href="/works/1" class="hover-this" data-item="0">Tele2</a>
+              </h2>
+              <h2>
+                <a href="/works/2" class="hover-this" data-item="1">Modular</a>
+              </h2>
+              <h2>
+                <a  class="hover-this" data-item="2">Concepts'18</a>
+              </h2>
+              <h2>
+                <a href="/works/4" class="hover-this" data-item="3">Kish</a>
+              </h2>
+              <h2>
+                <a href="/works/5" class="hover-this" data-item="4">Quick slim</a>
+              </h2>
+              <h2>
+                <a href="/works/6" class="hover-this" data-item="5">Concepts'17</a>
+              </h2>
+              <h2>
+                <a href="/works/7" class="hover-this" data-item="6">Pop tube</a>
+              </h2>
+            </div>
 
-                <feColorMatrix in="warp" result="huedturb" type="hueRotate" values="90">
-                    <animate attributeType="XML" attributeName="values" values="0;180;360" dur="2s"
-                        repeatCount="indefinite" />
-                </feColorMatrix>
+            <div class="multi-textures-wrapper">
+              <div class="flex-wrapper multi-textures">
+                <img src="static/assets/img/displacement.jpg" data-sampler="displacement">
+                <video src="./static/assets/video/hover/Md_Hover_1x.mp4" data-sampler="firstTexture"></video>
+                <video src="./static/assets/video/hover/Tl_Hover_1x.mp4" data-sampler="secondTexture"></video>
+                <video src="./static/assets/video/hover/Cnc_Hover_1x.mp4" data-sampler="thirdTexture"></video>
+                <video src="./static/assets/video/hover/Ks_Hover_1x.mp4" data-sampler="fourthTexture"></video>
+                <video src="./static/assets/video/hover/QS_Hover_1x.mp4" data-sampler="fifthTexture"></video>
+                <video src="./static/assets/video/hover/Cp_Hover_1x.mp4" data-sampler="sixthTexture"></video>
+                <video src="./static/assets/video/hover/Pt_Hover_1x.mp4" data-sampler="seventhTexture"></video>
+              </div>
+            </div>
+            
+              <span id="enter-site">
+              </span>
+          </div>
 
-                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic"
-                    in2="huedturb" x="0%" y="0%" />
-
-            </filter>
-        </defs>
-    </svg>
-
-</main>
+        </main>
         `;
-    }
+  }
 }

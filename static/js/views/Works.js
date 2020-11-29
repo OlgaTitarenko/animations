@@ -9,38 +9,39 @@ export default class extends AbstractView {
         this.cursorAnimation();
     }
     getNext = () => {
+      console.log(this.params.id)
         if (this.params.id === '7') {
             return '1'
         }
-        return +this.params.id + 1 
+        return (+this.params.id + 1) + '' 
     }
     getPrew = () => {
         if (this.params.id == '1') {
-            return 7;
+            return '7';
         }
-        return +this.params.id - 1
+        return (+this.params.id - 1) + ''
     }
-    getVIdeo(item) {
+    getVideo(item) {
         switch (item) {
-            case 1: 
+            case '1': 
                 return `<video src="/static/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case 2 :
+            case '2' :
                 return `<video src="/static/assets/works/md_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case 3 : 
+            case '3' : 
                 return `<video src="/static/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case 4 : 
+            case '4' : 
                 return `<video src="/static/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case 5: 
+            case '5': 
                 return `<video src="/static/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case 6 : 
+            case '6' : 
                 return `<video src="/static/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case 7: 
+            case '7': 
                 return `<video src="/static/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`
                 break;
         }
@@ -219,7 +220,7 @@ export default class extends AbstractView {
            
             <a href="/works/${this.getPrew()}" class="works-nav-prew">
             <div class="works-nav-prew-video">
-                ${this.getVIdeo(this.getPrew())}
+                ${this.getVideo(this.getPrew())}
             </div>
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.513 5.63763e-06C17.9745 5.28775 15.5997 9.25357 13.3887 11.8974L85 11.8974L85 17.1026L13.3887 17.1026C15.5997 19.7464 17.9745 23.7123 20.513 29L16.2139 29C11.0549 22.9687 5.65029 18.5071 -1.17012e-06 15.6154L-1.36514e-06 13.3846C5.65029 10.5755 11.0549 6.11397 16.2139 6.01347e-06L20.513 5.63763e-06Z" fill="white"/>
@@ -229,7 +230,7 @@ export default class extends AbstractView {
             </a>
             <a href="/works/${this.getNext()}" class="works-nav-next">
             <div class="works-nav-next-video">
-                ${this.getVIdeo(this.getNext())}
+                ${this.getVideo(this.getNext())}
             </div>  
             <span>Next</span>
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
