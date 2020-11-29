@@ -7,15 +7,9 @@
   box-sizing: border-box;
 
   @media (max-width: 1440px) {
-    padding-top: 500px;
+    padding-top: 55vh;
   }
-  @media (max-width: 1024px) {
-    padding-top: 400px;
-  }
-  @media (max-width: 768px) {
-    padding-top: 350px;
-  }
-
+ 
   .about-text {
     margin-bottom: 45px;
     background-color: white;
