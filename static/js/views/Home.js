@@ -353,7 +353,7 @@ export default class extends AbstractView {
                 <a href="/works/2" class="hover-this" data-item="1">Modular</a>
               </h2>
               <h2>
-                <a  class="hover-this" data-item="2">Concepts'18</a>
+                <a href="/works/3" class="hover-this" data-item="2">Concepts'18</a>
               </h2>
               <h2>
                 <a href="/works/4" class="hover-this" data-item="3">Kish</a>
