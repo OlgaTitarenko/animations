@@ -242,10 +242,18 @@ export default class extends AbstractView {
       //     });
       // }, false);
 
-      function animateVideo(event) {
+      function animateVideo(arg) {
+
+        let element;
+        if (arg.classList) {
+          element = arg;
+        } else {
+          element = arg.target
+        }
+
         if (activeTexture === -1) {
           document.body.classList.add("video-started");
-          activeTexture = +event.target.dataset.item;
+          activeTexture = +element.dataset.item;
 
           multiTexturesPlane.playVideos();
           transitionTimer = 0;
@@ -259,22 +267,29 @@ export default class extends AbstractView {
             });
           });
         } else {
-          if (activeTexture === +event.target.dataset.item) {
+          if (activeTexture === +element.dataset.item) {
             return null;
           }
 
           from = activeTexture;
           multiTexturesPlane.uniforms.from.value = activeTexture;
 
-          activeTexture = +event.target.dataset.item;
+          activeTexture = +element.dataset.item;
           // transitionTimer = 0;
           multiTexturesPlane.uniforms.to.value = activeTexture;
           first = true;
           multiTexturesPlane.videos[activeTexture].play();
         }
       }
-      function hideVideo(event) {
-        if (event.target.classList.contains('hover-this')) {
+
+      function hideVideo(arg) {
+        let element;
+        if (arg.classList) {
+          element = arg;
+        } else  {
+          element = arg.target
+        }
+        if (element.classList.contains('hover-this')) {
           return null;
         }
         if (activeTexture !== -1) {
@@ -283,15 +298,39 @@ export default class extends AbstractView {
         }
       }
 
-      list.forEach(item => {
-        item.removeEventListener("mousemove", animateVideo)
-      });
+      
+      let timer = null;
+
+      function scrollCursor(e) {
+        if(timer !== null) {
+          clearTimeout(timer);
+        }
+        timer = setTimeout(function() {
+          const cursor = document.querySelector('.cursor');
+         
+          const element = document.elementFromPoint(parseInt(cursor.style.left), parseInt(cursor.style.top));
+
+          if (element.classList.contains('hover-this')) {
+            animateVideo(element);
+          } else {
+            hideVideo(element);
+          }
+        }, 150);
+      }
 
       list.forEach(item => {
-        item.addEventListener("mousemove", animateVideo)
+        item.removeEventListener("mousemove", animateVideo);
+        //item.addEventListener('scroll', scrollCursor);
+      });
+      document.querySelector('.home-container').removeEventListener('mousemove', hideVideo)
+      window.removeEventListener('scroll',scrollCursor);
+
+      list.forEach(item => {
+        item.addEventListener("mousemove", animateVideo);
+        //item.addEventListener('scroll', scrollCursor);
       });
       document.querySelector('.home-container').addEventListener('mousemove', hideVideo)
-
+      window.addEventListener('scroll',scrollCursor);
 
     }).onRender(() => {
 
@@ -341,11 +380,12 @@ export default class extends AbstractView {
   async getHtml() {
     return `
         <main class="home-container">
+          
           <div id="page-wrap">
 
             <div id="canvas"></div>
 
-            <div class="list">
+            <div class="list slideInUp">
               <h2>
                 <a href="/works/1" class="hover-this" data-item="0">Tele2</a>
               </h2>

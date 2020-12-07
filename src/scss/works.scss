@@ -19,6 +19,9 @@
       mix-blend-mode: difference;
     }
   }
+  .about-text.bottom-text {
+    width: 100%;
+  }
   .works-content {
     padding-left: 18vw;
     
@@ -75,9 +78,10 @@
       bottom: 0;
       left: 0;
       width: calc(41vw - 20px);
-      height: 600px;
+      height: 100%;
       z-index: -1;
       display: flex;
+      align-items: center;
       opacity: 0;
       transition: opacity 0.5s ease-in;
     }
@@ -101,9 +105,10 @@
       top: 0;
       right: 0;
       width: calc(41vw - 20px);
-      height: 600px;
+      height: 100%;
       z-index: -1;
       display: flex;
+      align-items: center;
       opacity: 0;
       transition: opacity 0.5s ease-in;
      

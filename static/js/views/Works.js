@@ -59,7 +59,7 @@ export default class extends AbstractView {
             <img src="/static/assets/works/md_2.png" alt="" />
             <video src="/static/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
             <h2><span class="about-text-space"></span>2019</h2>
         </div>
@@ -78,7 +78,7 @@ export default class extends AbstractView {
             <img src="/static/assets/works/Tl_3.png" alt="" />
             <img src="/static/assets/works/Tl_4.png" alt="" />
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Agency: Nullgravity</h2>
             <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
             <h2><span class="about-text-space"></span>2018</h2>
@@ -99,7 +99,7 @@ export default class extends AbstractView {
             <video src="/static/assets/works/Cnc_4.mp4" autoplay muted loop="true"></video>
             <img src="/static/assets/works/Cnc_5.png" alt="" />
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
             <h2><span class="about-text-space"></span>2018</h2>
         </div>
@@ -119,7 +119,7 @@ export default class extends AbstractView {
             <video src="/static/assets/works/Ks_4.mp4" autoplay muted loop="true"></video>
             
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
             <h2><span class="about-text-space"></span>2017</h2>
         </div>
@@ -137,7 +137,7 @@ export default class extends AbstractView {
             <img src="/static/assets/works/QS_2.png" alt="" />
             <img src="/static/assets/works/QS_3.png" alt="" />
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
           <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
           <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
           <h2><span class="about-text-space"></span>2017</h2>
@@ -157,7 +157,7 @@ export default class extends AbstractView {
             <video src="/static/assets/works/Cp_3.mp4" autoplay muted loop="true"></video>
             <img src="/static/assets/works/Cp_4.png" alt="" />
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
           <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
           <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
           <h2><span class="about-text-space"></span>2017</h2>
@@ -177,7 +177,7 @@ export default class extends AbstractView {
             <img src="/static/assets/works/Pt_3.png" alt="" />
             <img src="/static/assets/works/Pt_4.png" alt="" />
         </div>
-        <div class="about-text">
+        <div class="about-text bottom-text">
           <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
           <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
           <h2><span class="about-text-space"></span>2016</h2>
