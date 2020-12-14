@@ -24,25 +24,25 @@ export default class extends AbstractView {
     getVideo(item) {
         switch (item) {
             case '1': 
-                return `<video src="/static/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`
                 break;
             case '2' :
-                return `<video src="/static/assets/works/md_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>`
                 break;
             case '3' : 
-                return `<video src="/static/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`
                 break;
             case '4' : 
-                return `<video src="/static/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`
                 break;
             case '5': 
-                return `<video src="/static/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`
                 break;
             case '6' : 
-                return `<video src="/static/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`
                 break;
             case '7': 
-                return `<video src="/static/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`
+                return `<video src="/build/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`
                 break;
         }
     }
@@ -55,9 +55,9 @@ export default class extends AbstractView {
                 presenting purposes</p>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/md_1.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/md_2.png" alt="" />
-            <video src="/static/assets/works/md_3.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/md_2.png" alt="" />
+            <video src="/build/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
         <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
@@ -73,10 +73,10 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/Tl_2.png" alt="" />
-            <img src="/static/assets/works/Tl_3.png" alt="" />
-            <img src="/static/assets/works/Tl_4.png" alt="" />
+            <video src="/build/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/Tl_2.png" alt="" />
+            <img src="/build/assets/works/Tl_3.png" alt="" />
+            <img src="/build/assets/works/Tl_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Agency: Nullgravity</h2>
@@ -93,11 +93,11 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Cnc_2.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Cnc_3.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Cnc_4.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/Cnc_5.png" alt="" />
+            <video src="/build/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Cnc_2.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Cnc_3.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Cnc_4.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/Cnc_5.png" alt="" />
         </div>
         <div class="about-text bottom-text">
             <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
@@ -113,10 +113,10 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Ks_2.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/Ks_3.png" alt="" />
-            <video src="/static/assets/works/Ks_4.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Ks_2.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/Ks_3.png" alt="" />
+            <video src="/build/assets/works/Ks_4.mp4" autoplay muted loop="true"></video>
             
         </div>
         <div class="about-text bottom-text">
@@ -133,9 +133,9 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/QS_1.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/QS_2.png" alt="" />
-            <img src="/static/assets/works/QS_3.png" alt="" />
+            <video src="/build/assets/works/QS_1.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/QS_2.png" alt="" />
+            <img src="/build/assets/works/QS_3.png" alt="" />
         </div>
         <div class="about-text bottom-text">
           <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
@@ -152,10 +152,10 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Cp_2.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Cp_3.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/Cp_4.png" alt="" />
+            <video src="/build/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Cp_2.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Cp_3.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/Cp_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
           <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
@@ -172,10 +172,10 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/static/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>
-            <video src="/static/assets/works/Pt_2.mp4" autoplay muted loop="true"></video>
-            <img src="/static/assets/works/Pt_3.png" alt="" />
-            <img src="/static/assets/works/Pt_4.png" alt="" />
+            <video src="/build/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Pt_2.mp4" autoplay muted loop="true"></video>
+            <img src="/build/assets/works/Pt_3.png" alt="" />
+            <img src="/build/assets/works/Pt_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
           <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>

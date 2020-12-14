@@ -23,7 +23,7 @@ export default class extends AbstractView {
         return `
         <main class="about-container slideInUp" data-page="about">
         <div class="about-image">
-            <img src="./static/assets/img/about.jpg" alt="" id='parallax-img'>
+            <img src="./build/assets/img/about.jpg" alt="" id='parallax-img'>
         </div>
         <div class="about-text">
             <p><span class="about-text-space"></span>Vitali Senevych is

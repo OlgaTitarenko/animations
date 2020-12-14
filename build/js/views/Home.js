@@ -411,14 +411,14 @@ export default class extends AbstractView {
 
             <div class="multi-textures-wrapper">
               <div class="flex-wrapper multi-textures">
-                <img src="static/assets/img/displacement.jpg" data-sampler="displacement">
-                <video src="./static/assets/video/hover/Md_Hover_1x.mp4" data-sampler="firstTexture"></video>
-                <video src="./static/assets/video/hover/Tl_Hover_1x.mp4" data-sampler="secondTexture"></video>
-                <video src="./static/assets/video/hover/Cnc_Hover_1x.mp4" data-sampler="thirdTexture"></video>
-                <video src="./static/assets/video/hover/Ks_Hover_1x.mp4" data-sampler="fourthTexture"></video>
-                <video src="./static/assets/video/hover/QS_Hover_1x.mp4" data-sampler="fifthTexture"></video>
-                <video src="./static/assets/video/hover/Cp_Hover_1x.mp4" data-sampler="sixthTexture"></video>
-                <video src="./static/assets/video/hover/Pt_Hover_1x.mp4" data-sampler="seventhTexture"></video>
+                <img src="build/assets/img/displacement.jpg" data-sampler="displacement">
+                <video src="./build/assets/video/hover/Md_Hover_1x.mp4" data-sampler="firstTexture"></video>
+                <video src="./build/assets/video/hover/Tl_Hover_1x.mp4" data-sampler="secondTexture"></video>
+                <video src="./build/assets/video/hover/Cnc_Hover_1x.mp4" data-sampler="thirdTexture"></video>
+                <video src="./build/assets/video/hover/Ks_Hover_1x.mp4" data-sampler="fourthTexture"></video>
+                <video src="./build/assets/video/hover/QS_Hover_1x.mp4" data-sampler="fifthTexture"></video>
+                <video src="./build/assets/video/hover/Cp_Hover_1x.mp4" data-sampler="sixthTexture"></video>
+                <video src="./build/assets/video/hover/Pt_Hover_1x.mp4" data-sampler="seventhTexture"></video>
               </div>
             </div>
             
