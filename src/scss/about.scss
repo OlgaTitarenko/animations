@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Akzidenz-Grotesk Pro";
+  src: url(../assets/font/AkzidenzGroteskPro-Ext.woff);
+}
 .about-container {
     padding: 20px;
     width: 100vw;
@@ -59,7 +63,6 @@
     p, h2 {
         margin: 0;
         padding-bottom: 10px;
-        font-family: Akzidenz-Grotesk Pro;
         font-size: 60px;
         font-style: normal;
         font-weight: 400;
