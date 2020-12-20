@@ -7,9 +7,9 @@ export default class extends AbstractView {
     }
     mainFunction = () => {
         this.cursorAnimation();
+       // this.routerTo();
     }
     getNext = () => {
-      console.log(this.params.id)
         if (this.params.id === '7') {
             return '1'
         }
@@ -55,7 +55,7 @@ export default class extends AbstractView {
                 presenting purposes</p>
         </div>
         <div class="works-content">
-            <video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/md_1.mp4" muted controls></video>
             <img src="/build/assets/works/md_2.png" alt="" />
             <video src="/build/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
@@ -73,7 +73,7 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/build/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Tl_1.mp4" muted controls ></video>
             <img src="/build/assets/works/Tl_2.png" alt="" />
             <img src="/build/assets/works/Tl_3.png" alt="" />
             <img src="/build/assets/works/Tl_4.png" alt="" />
@@ -116,7 +116,7 @@ export default class extends AbstractView {
             <video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>
             <video src="/build/assets/works/Ks_2.mp4" autoplay muted loop="true"></video>
             <img src="/build/assets/works/Ks_3.png" alt="" />
-            <video src="/build/assets/works/Ks_4.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Ks_4.mp4" muted controls></video>
             
         </div>
         <div class="about-text bottom-text">
@@ -172,7 +172,7 @@ export default class extends AbstractView {
             </h2>
         </div>
         <div class="works-content">
-            <video src="/build/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>
+            <video src="/build/assets/works/Pt_1.mp4" muted controls></video>
             <video src="/build/assets/works/Pt_2.mp4" autoplay muted loop="true"></video>
             <img src="/build/assets/works/Pt_3.png" alt="" />
             <img src="/build/assets/works/Pt_4.png" alt="" />
@@ -218,26 +218,26 @@ export default class extends AbstractView {
 
             <div class="works-nav">
            
-            <a href="/works/${this.getPrew()}" class="works-nav-prew">
-            <div class="works-nav-prew-video">
-                ${this.getVideo(this.getPrew())}
-            </div>
+            <div data-url="/works/${this.getPrew()}" class="works-nav-prew" data-link>
+              <div class="works-nav-prew-video">
+                  ${this.getVideo(this.getPrew())}
+              </div>
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.513 5.63763e-06C17.9745 5.28775 15.5997 9.25357 13.3887 11.8974L85 11.8974L85 17.1026L13.3887 17.1026C15.5997 19.7464 17.9745 23.7123 20.513 29L16.2139 29C11.0549 22.9687 5.65029 18.5071 -1.17012e-06 15.6154L-1.36514e-06 13.3846C5.65029 10.5755 11.0549 6.11397 16.2139 6.01347e-06L20.513 5.63763e-06Z" fill="white"/>
               </svg>
               <span>Prew</span>
               
-            </a>
-            <a href="/works/${this.getNext()}" class="works-nav-next">
-            <div class="works-nav-next-video">
-                ${this.getVideo(this.getNext())}
-            </div>  
-            <span>Next</span>
+            </div>
+            <div data-url="/works/${this.getNext()}"  class="works-nav-next" data-link>
+              <div class="works-nav-next-video">
+                  ${this.getVideo(this.getNext())}
+              </div>  
+              <span>Next</span>
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M64.487 29C67.0255 23.7123 69.4003 19.7464 71.6113 17.1026L0 17.1026L0 11.8974L71.6113 11.8974C69.4003 9.25356 67.0255 5.28775 64.487 0L68.7861 0C73.9451 6.03134 79.3497 10.4929 85 13.3846V15.6154C79.3497 18.4245 73.9451 22.886 68.7861 29H64.487Z" fill="white"/>
-                </svg>
+              </svg>
                         
-            </a>
+            </div>
           </div>
           
         </main>

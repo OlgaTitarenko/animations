@@ -21,6 +21,10 @@
   }
   .about-text.bottom-text {
     width: 100%;
+
+    .about-text-space {
+      width: calc(18vw - 5px);
+    }
   }
   .works-content {
     padding-left: 18vw;

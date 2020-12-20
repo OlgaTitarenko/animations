@@ -31,6 +31,7 @@ const getParams = match => {
     }))
 }
 const navigateTo = url => {
+  window.scrollTo(0, 0);
   document.querySelector('#app').classList.remove('hide')
     history.pushState(null, null, url);
     router();
@@ -75,10 +76,14 @@ window.addEventListener('popstate', router);
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click" , e => {
+      
         if (e.target.matches("[data-link]")) {
             e.preventDefault();
             document.querySelector('#app').classList.add('hide');
             setTimeout(() => navigateTo(e.target.href), 1000);
+        } else if (e.target.parentNode.matches("[data-link]")) {
+          document.querySelector('#app').classList.add('hide');
+            setTimeout(() => navigateTo(e.target.parentNode.dataset.url), 1000);
         }
     })
     router();

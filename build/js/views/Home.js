@@ -7,61 +7,7 @@ export default class extends AbstractView {
   mainFunction = () => {
     this.cursorAnimation();
     this.hoverVideo();
-    // let firstTime = -1;
-    // const link = document.querySelectorAll('h2 > .hover-this');
-    // const elements = document.querySelectorAll('.element');
-    // const cursor = document.querySelector('.cursor');
-
-    // const animateit = (e) => {
-    //     const index = e.target.dataset.item;
-    //     const hoverVideo = elements[index].querySelector('video');
-
-    //     if (e.type === 'mousemove') {
-    //         if (elements[index].classList.contains('hide')) {
-    //             elements[index].classList.remove('hide')
-    //         }
-    //         if (firstTime != -1 && firstTime != index) {
-    //             elements[index].classList.add('show');
-    //         }
-    //         elements[index].classList.add('active');
-    //         if (hoverVideo) {
-    //             hoverVideo.play();
-    //         }
-    //     }
-    //     if (e.type === 'mouseleave') {
-
-    //         if (firstTime != -1) {
-    //             elements[firstTime].classList.add('hide');
-    //             elements[index].classList.remove('show');
-    //         }
-    //         elements[index].classList.remove('active');
-    //         if (hoverVideo) {
-    //             hoverVideo.pause();
-    //             hoverVideo.currentTime = 0;
-    //         }
-
-
-    //     }
-    //     firstTime = index;
-    // }
-    // const moveCursorHome = (e) => {
-    //     if (!e.target.classList.contains('hover-this')) {
-    //         if (firstTime !== -1) {
-    //             elements[firstTime].classList.remove('hide');
-    //             firstTime = -1;
-    //         }
-    //     }
-    // }
-
-    // link.forEach(b => b.removeEventListener('mousemove', animateit));
-    // link.forEach(b => b.removeEventListener('mouseleave', animateit));
-    // window.removeEventListener('mousemove', moveCursorHome);
-
-
-    // link.forEach(b => b.addEventListener('mousemove', animateit));
-    // link.forEach(b => b.addEventListener('mouseleave', animateit));
-    // window.addEventListener('mousemove', moveCursorHome);
-
+ 
   }
 
   hoverVideo() {
@@ -222,26 +168,7 @@ export default class extends AbstractView {
       document.body.classList.add("curtains-ready");
 
       // click to play the videos
-      // document.getElementById("enter-site").addEventListener("click", () => {
-      //     // display canvas and hide the button
-
-      //     document.body.classList.add("video-started");
-
-      //     // play all videos to force uploading the first frame of each texture
-      //     multiTexturesPlane.playVideos();
-      //     transitionTimer = 0;
-      //     isPlaying = true;
-
-      //     // wait a tick and pause the second video (the one that is hidden)
-      //     curtains.nextRender(() => {
-      //         multiTexturesPlane.videos.forEach((video, key) => {
-      //           if (key !== activeTexture) {
-      //             video.pause();
-      //           }
-      //         });
-      //     });
-      // }, false);
-
+      
       function animateVideo(arg) {
 
         let element;
@@ -387,25 +314,25 @@ export default class extends AbstractView {
 
             <div class="list slideInUp">
               <h2>
-                <a href="/works/1" class="hover-this" data-item="0">Tele2</a>
+                <a href="/works/1" class="hover-this" data-item="0" data-link>Tele2</a>
               </h2>
               <h2>
-                <a href="/works/2" class="hover-this" data-item="1">Modular</a>
+                <a href="/works/2" class="hover-this" data-item="1" data-link>Modular</a>
               </h2>
               <h2>
-                <a href="/works/3" class="hover-this" data-item="2">Concepts'18</a>
+                <a href="/works/3" class="hover-this" data-item="2" data-link>Concepts'18</a>
               </h2>
               <h2>
-                <a href="/works/4" class="hover-this" data-item="3">Kish</a>
+                <a href="/works/4" class="hover-this" data-item="3" data-link>Kish</a>
               </h2>
               <h2>
-                <a href="/works/5" class="hover-this" data-item="4">Quick slim</a>
+                <a href="/works/5" class="hover-this" data-item="4" data-link>Quick slim</a>
               </h2>
               <h2>
-                <a href="/works/6" class="hover-this" data-item="5">Concepts'17</a>
+                <a href="/works/6" class="hover-this" data-item="5" data-link>Concepts'17</a>
               </h2>
               <h2>
-                <a href="/works/7" class="hover-this" data-item="6">Pop tube</a>
+                <a href="/works/7" class="hover-this" data-item="6" data-link>Pop tube</a>
               </h2>
             </div>
 
