@@ -3,17 +3,18 @@
   src: url(../assets/font/AkzidenzGroteskPro-Ext.woff);
 }
 .about-container {
-    padding: 20px;
+    padding: 0 20px;
     width: 100vw;
     box-sizing: border-box;
     position: relative;
     background-color: #fff;
 }
 .about-image {
-    margin-bottom: 45px;
+   
     height: 750px;
     position: relative;
-    transition: all 0.3s ease;
+    top: 0;
+    left: 0;
 
     @media (max-width: 1440px ) {
         height: 567px;
@@ -28,16 +29,10 @@
         height: 148px;
     }
     img {
-       position: absolute;
-       top: 0;
-       left: 18vw;
-       width: 80vw;
+      
        height: 100%;
-       object-fit: cover;
-       pointer-events: none;
-       z-index: 0;
+       
        @media (max-width: 768px ) {
-        left: 0;
         width: 100%;
     }
     }
@@ -82,4 +77,96 @@
             margin-bottom: 50px;
         }
     }
+}
+
+// .parallax {
+//   height: 100vh;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   -webkit-perspective: 1px;
+//   perspective: 1px;
+
+// }
+
+// .parallax__layer {
+//   position: absolute;
+ 
+// }
+
+// .parallax__layer--base {
+//   transform: translateZ(0);
+//   padding: 75vh 0;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }
+
+// .parallax__layer--back {
+//   transform: translateZ(-1px) scale(1);
+//   top: 0;
+//   left: 18vw;
+
+//   img {
+//     height: 750px;
+//   }
+// }
+
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  perspective: 2px;
+  background-color: white;
+}
+.section { 
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-shadow: 0 0 5px #000;
+
+  .about-info {
+    padding-top: 45%;
+    background-color: inherit;
+    @media (max-width: 1500px) {
+      padding-top: 47%;
+    }
+    @media (max-width: 1000px) {
+      padding-top: 50%;
+    }
+    @media (max-width: 768px) {
+      padding-top: 60%;
+    }
+    @media (max-width: 660px) {
+      padding-top: 64%;
+    }
+    @media (max-width: 480px) {
+      padding-top: 70%;
+    }
+    @media (max-width: 350px) {
+      padding-top: 74%;
+    }
+  }
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 72px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: calc(82% - 5px);
+  z-index: -1;
+  @media (max-width: 768px) {
+    background-size: 100%;
+  }
+}
+
+.bg1::after {
+  background-image: url('../../build/assets/img/about.jpg');
+  background-position: right top;
+  background-repeat: no-repeat;
 }
