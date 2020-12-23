@@ -312,7 +312,7 @@ export default class extends AbstractView {
 
             <div id="canvas"></div>
 
-            <div class="list slideInUp">
+            <div class="list ">
               <h2>
                 <a href="/works/1" class="hover-this" data-item="0" data-link>Tele2</a>
               </h2>

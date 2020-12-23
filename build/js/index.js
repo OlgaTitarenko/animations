@@ -4,19 +4,28 @@ import Works from './views/Works.js';
 
 const cursor = document.querySelector('.cursor');
 
-function moveCursor(e) {
+
+
+function isMobile() {
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    cursor.style.display = 'none';
+    return null;
+  }
+  function moveCursor(e) {
     const { clientX: x, clientY: y } = e;
     
     cursor.style.left = x + 'px';
     cursor.style.top = y + 'px';
 
-}
-function mouse() {
-    window.addEventListener('mousemove', moveCursor);
-};
+  }
+  function mouse() {
+      window.addEventListener('mousemove', moveCursor);
+  };
 
-window.removeEventListener('mousemove', moveCursor);
-mouse();
+  window.removeEventListener('mousemove', moveCursor);
+  mouse();
+}
+isMobile()
 
 
 

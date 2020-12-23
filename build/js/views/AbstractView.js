@@ -4,7 +4,8 @@ export default class{
     }
     cursorAnimation = () => {
         const cursor = document.querySelector('.cursor');
-        const links = document.querySelectorAll('a');
+        const links = document.querySelectorAll('[data-link]');
+        cursor.classList.remove("cursor-hover");
         const animateit = (e) => {
             cursor.classList.add("cursor-hover");
             if (e.type === 'mouseleave') {
