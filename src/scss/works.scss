@@ -23,6 +23,7 @@
   .about-text.bottom-text {
     width: 100%;
     padding-left: calc(18vw - 5px);
+    box-sizing: border-box;
     @media (max-width: 768px) {
       padding-left: 0;
     }

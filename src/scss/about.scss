@@ -9,35 +9,7 @@
     position: relative;
     background-color: #fff;
 }
-.about-image {
-   
-    height: 750px;
-    position: relative;
-    top: 0;
-    left: 0;
 
-    @media (max-width: 1440px ) {
-        height: 567px;
-    }
-    @media (max-width: 1024px ) {
-        height: 400px;
-    }
-    @media (max-width: 768px ) {
-        height: 360px;
-    }
-    @media (max-width: 640px) {
-        height: 148px;
-    }
-    img {
-      
-       height: 100%;
-       
-       @media (max-width: 768px ) {
-        width: 100%;
-    }
-    }
-
-}
 .about-text {
     margin-bottom: 120px;
     width: 81%;
@@ -79,39 +51,6 @@
     }
 }
 
-// .parallax {
-//   height: 100vh;
-//   overflow-x: hidden;
-//   overflow-y: auto;
-//   -webkit-perspective: 1px;
-//   perspective: 1px;
-
-// }
-
-// .parallax__layer {
-//   position: absolute;
- 
-// }
-
-// .parallax__layer--base {
-//   transform: translateZ(0);
-//   padding: 75vh 0;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-// }
-
-// .parallax__layer--back {
-//   transform: translateZ(-1px) scale(1);
-//   top: 0;
-//   left: 18vw;
-
-//   img {
-//     height: 750px;
-//   }
-// }
-
 .wrapper {
   height: 100vh;
   overflow-x: hidden;
@@ -126,25 +65,25 @@
   color: white;
 
   .about-info {
-    padding-top: 45%;
+    padding-top: 47%;
     background-color: inherit !important;
     @media (max-width: 1500px) {
-      padding-top: 47%;
+      padding-top: 51%;
     }
     @media (max-width: 1000px) {
-      padding-top: 50%;
+      padding-top: 54%;
     }
     @media (max-width: 768px) {
-      padding-top: 60%;
+      padding-top: 66%;
     }
     @media (max-width: 660px) {
-      padding-top: 64%;
+      padding-top: 72%;
     }
     @media (max-width: 480px) {
-      padding-top: 70%;
+      padding-top: 78%;
     }
     @media (max-width: 350px) {
-      padding-top: 74%;
+      padding-top: 84%;
     }
   }
   _::-webkit-full-page-media, _:future, :root .panel {
@@ -155,7 +94,7 @@
 .parallax::after {
   content: " ";
   position: absolute;
-  top: 72px;
+  top: 113px;
   right: 0;
   bottom: 0;
   left: 0;
@@ -168,7 +107,7 @@
 }
 
 .bg1::after {
-  background-image: url('../../build/assets/img/about.jpg');
+  background-image: url('../../build/assets/img/about.png');
   background-position: right top;
   background-repeat: no-repeat;
 }

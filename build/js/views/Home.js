@@ -339,8 +339,8 @@ export default class extends AbstractView {
             <div class="multi-textures-wrapper">
               <div class="flex-wrapper multi-textures">
                 <img src="build/assets/img/displacement.jpg" data-sampler="displacement">
-                <video src="./build/assets/video/hover/Md_Hover_1x.mp4" data-sampler="firstTexture"></video>
-                <video src="./build/assets/video/hover/Tl_Hover_1x.mp4" data-sampler="secondTexture"></video>
+                <video src="./build/assets/video/hover/Tl_Hover_1x.mp4" data-sampler="firstTexture"></video>
+                <video src="./build/assets/video/hover/Md_Hover_1x.mp4" data-sampler="secondTexture"></video>
                 <video src="./build/assets/video/hover/Cnc_Hover_1x.mp4" data-sampler="thirdTexture"></video>
                 <video src="./build/assets/video/hover/Ks_Hover_1x.mp4" data-sampler="fourthTexture"></video>
                 <video src="./build/assets/video/hover/QS_Hover_1x.mp4" data-sampler="fifthTexture"></video>
