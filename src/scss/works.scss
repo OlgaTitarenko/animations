@@ -57,7 +57,11 @@
 
   @media (max-width: 768px) {
     margin-left: 0;
-    
+  }
+  @media (max-width: 425px) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin-bottom: 0;
   }
 
   .works-nav-next ,
