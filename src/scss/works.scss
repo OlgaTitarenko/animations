@@ -11,6 +11,7 @@
   }
  
   .about-text {
+    margin-top: 45px;
     margin-bottom: 45px;
     background-color: white;
     mix-blend-mode: normal;
@@ -21,12 +22,9 @@
   }
   .about-text.bottom-text {
     width: 100%;
-
-    .about-text-space {
-      width: calc(18vw - 5px);
-      @media (max-width: 768px) {
-        width: 0;
-      }
+    padding-left: calc(18vw - 5px);
+    @media (max-width: 768px) {
+      padding-left: 0;
     }
   }
   .works-content {
@@ -52,14 +50,14 @@
   justify-content: space-between;
   margin-left: 18vw;
   max-width: 1558px;
-  padding-top: 300px;
-  padding-bottom: 300px;
+  padding-top: 131px;
+  padding-bottom: 131px;
+  margin-bottom: 45px;
   position: relative;
 
   @media (max-width: 768px) {
     margin-left: 0;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    
   }
 
   .works-nav-next ,

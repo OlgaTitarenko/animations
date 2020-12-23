@@ -60,8 +60,8 @@ export default class extends AbstractView {
             <video src="/build/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
         <div class="about-text bottom-text">
-            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-            <h2><span class="about-text-space"></span>2019</h2>
+            <h2>Role: UX/UI Design, Animation </h2>
+            <h2>2019</h2>
         </div>
         `
     }
@@ -79,9 +79,9 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Tl_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-            <h2><span class="about-text-space"></span>Agency: Nullgravity</h2>
-            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-            <h2><span class="about-text-space"></span>2018</h2>
+            <h2>Agency: Nullgravity</h2>
+            <h2>Role: UX/UI Design, Animation </h2>
+            <h2>2018</h2>
         </div>
         `
     }
@@ -100,8 +100,8 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Cnc_5.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-            <h2><span class="about-text-space"></span>2018</h2>
+            <h2>Role: UX/UI Design, Animation </h2>
+            <h2>2018</h2>
         </div>
         `
     }
@@ -120,8 +120,8 @@ export default class extends AbstractView {
             
         </div>
         <div class="about-text bottom-text">
-            <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-            <h2><span class="about-text-space"></span>2017</h2>
+            <h2>Role: UX/UI Design, Animation </h2>
+            <h2>2017</h2>
         </div>
         `
     }
@@ -138,9 +138,9 @@ export default class extends AbstractView {
             <img src="/build/assets/works/QS_3.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-          <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
-          <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-          <h2><span class="about-text-space"></span>2017</h2>
+          <h2>Agency: Thinkmobiles</h2>
+          <h2>Role: UX/UI Design, Animation </h2>
+          <h2>2017</h2>
         </div>
         `
     }
@@ -158,9 +158,9 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Cp_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-          <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
-          <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-          <h2><span class="about-text-space"></span>2017</h2>
+          <h2>Agency: Thinkmobiles</h2>
+          <h2>Role: UX/UI Design, Animation </h2>
+          <h2>2017</h2>
         </div>
         `
     }
@@ -178,9 +178,9 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Pt_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-          <h2><span class="about-text-space"></span>Agency: Thinkmobiles</h2>
-          <h2><span class="about-text-space"></span>Role: UX/UI Design, Animation </h2>
-          <h2><span class="about-text-space"></span>2016</h2>
+          <h2>Agency: Thinkmobiles</h2>
+          <h2>Role: UX/UI Design, Animation </h2>
+          <h2>2016</h2>
         </div>
         `
     }
@@ -225,7 +225,7 @@ export default class extends AbstractView {
               <svg width="85" height="29" viewBox="0 0 85 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20.513 5.63763e-06C17.9745 5.28775 15.5997 9.25357 13.3887 11.8974L85 11.8974L85 17.1026L13.3887 17.1026C15.5997 19.7464 17.9745 23.7123 20.513 29L16.2139 29C11.0549 22.9687 5.65029 18.5071 -1.17012e-06 15.6154L-1.36514e-06 13.3846C5.65029 10.5755 11.0549 6.11397 16.2139 6.01347e-06L20.513 5.63763e-06Z" fill="white"/>
               </svg>
-              <span>Prew</span>
+              <span>Prev</span>
               
             </div>
             <div data-url="/works/${this.getNext()}"  class="works-nav-next" data-link>
