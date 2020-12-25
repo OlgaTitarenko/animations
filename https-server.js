@@ -2,8 +2,8 @@ const https = require('https');
 const fs = require('fs');
 
 const options = {
-  key: fs.readFileSync("/ssh.pub/my-site-key.pem"),
-  cert: fs.readFileSync("/ssh.pub/chain.pem")
+  key: fs.readFileSync("/ssh"),
+  cert: fs.readFileSync("/ssh.pub")
 };
 
 const express = require("express");
