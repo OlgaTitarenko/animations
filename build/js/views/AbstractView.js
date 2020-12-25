@@ -4,7 +4,7 @@ export default class{
     }
     cursorAnimation = () => {
         const cursor = document.querySelector('.cursor');
-        const links = document.querySelectorAll('[data-link]');
+        const links = [...document.querySelectorAll('[data-link]'), ...document.querySelectorAll('[data-link-blank]')];
         cursor.classList.remove("cursor-hover");
         const animateit = (e) => {
             cursor.classList.add("cursor-hover");
