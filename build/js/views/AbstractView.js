@@ -2,7 +2,7 @@ export default class{
     constructor(params) {
        
     }
-    cursorAnimation = () => {
+    cursorAnimation() {
         const cursor = document.querySelector('.cursor');
         const links = [...document.querySelectorAll('[data-link]'), ...document.querySelectorAll('[data-link-blank]')];
         cursor.classList.remove("cursor-hover");
@@ -18,7 +18,5 @@ export default class{
         links.forEach(b => b.addEventListener('mousemove', animateit));
         links.forEach(b => b.addEventListener('mouseleave', animateit));
     }
-    async getHtml() {
-        return "";
-    }
+
 }

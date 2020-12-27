@@ -1,16 +1,15 @@
 import AbstractView from './AbstractView.js';
-
 export default class extends AbstractView {
-    constructor(params) {
-        super(params);
-    }
-    mainFunction() {
-       this.cursorAnimation();
-       
-    }
-    
-    async getHtml() {
-        return `
+  constructor(params) {
+    super(params);
+  }
+
+  mainFunction() {
+    this.cursorAnimation();
+  }
+
+  async getHtml() {
+    return `
         <main class="about-container slideInUp" data-page="about">
           <div class='wrapper'>
             <section class="section parallax bg1">
@@ -82,5 +81,6 @@ export default class extends AbstractView {
           </div>
         </main>
         `;
-    }
+  }
+
 }

@@ -1,6 +1,6 @@
-import Home from './views/Home.js';
-import About from './views/About.js';
-import Works from './views/Works.js';
+import Home from './Home.js';
+import About from './About.js';
+import Works from './Works.js';
 
 const cursor = document.querySelector('.cursor');
 

@@ -3,6 +3,8 @@ var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
+
 
 sass.compiler = require('node-sass');
 
@@ -16,6 +18,11 @@ function style() {
     .pipe(concat('index.css'))
     .pipe(gulp.dest('./build/css'))
 }
+function script() {
+  return gulp.src(['build/js/views/*.js'])
+    .pipe(babel())
+    .pipe(gulp.dest('build/assets/js/app'))
+}
 
 function watch() {
  
@@ -25,6 +32,7 @@ function watch() {
 
 exports.style = style;
 exports.watch = watch;
+exports.script = script;
 
 /*
 gulp.watch('./scr/components/*.html').on('change', browserSync.reload);

@@ -1,53 +1,64 @@
 import AbstractView from './AbstractView.js';
-
 export default class extends AbstractView {
-    constructor(params) {
-        super(params);
-        this.params = params;
+  constructor(params) {
+    super(params);
+    this.params = params;
+  }
+
+  mainFunction() {
+    this.cursorAnimation(); // this.routerTo();
+  }
+
+  getNext() {
+    if (this.params.id === '7') {
+      return '1';
     }
-    mainFunction () {
-        this.cursorAnimation();
-       // this.routerTo();
+
+    return +this.params.id + 1 + '';
+  }
+
+  getPrew() {
+    if (this.params.id == '1') {
+      return '7';
     }
-    getNext () {
-        if (this.params.id === '7') {
-            return '1'
-        }
-        return (+this.params.id + 1) + '' 
+
+    return +this.params.id - 1 + '';
+  }
+
+  getVideo(item) {
+    switch (item) {
+      case '1':
+        return `<video src="/build/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`;
+        break;
+
+      case '2':
+        return `<video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>`;
+        break;
+
+      case '3':
+        return `<video src="/build/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`;
+        break;
+
+      case '4':
+        return `<video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`;
+        break;
+
+      case '5':
+        return `<video src="/build/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`;
+        break;
+
+      case '6':
+        return `<video src="/build/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`;
+        break;
+
+      case '7':
+        return `<video src="/build/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`;
+        break;
     }
-    getPrew () {
-        if (this.params.id == '1') {
-            return '7';
-        }
-        return (+this.params.id - 1) + ''
-    }
-    getVideo(item) {
-        switch (item) {
-            case '1': 
-                return `<video src="/build/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`
-                break;
-            case '2' :
-                return `<video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>`
-                break;
-            case '3' : 
-                return `<video src="/build/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`
-                break;
-            case '4' : 
-                return `<video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`
-                break;
-            case '5': 
-                return `<video src="/build/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`
-                break;
-            case '6' : 
-                return `<video src="/build/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`
-                break;
-            case '7': 
-                return `<video src="/build/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`
-                break;
-        }
-    }
-    modular() {
-        return `
+  }
+
+  modular() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>Modular — <br/>
                 generative layouts for portfolio</h2>
@@ -63,10 +74,11 @@ export default class extends AbstractView {
             <h2>Role: UX/UI Design, Animation </h2>
             <h2>2019</h2>
         </div>
-        `
-    }
-    tele2() {
-        return `
+        `;
+  }
+
+  tele2() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>TELE2 — <br/>
             app for Kazakhstan mobile provider. Updating the existing app and create an easy flow for exchanging tariff resources. 
@@ -83,10 +95,11 @@ export default class extends AbstractView {
             <h2>Role: UX/UI Design, Animation </h2>
             <h2>2018</h2>
         </div>
-        `
-    }
-    conc18() {
-        return `
+        `;
+  }
+
+  conc18() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>Concepts’18 — <br/>
             non-comercial concepts. Exploring modularity and experimenting with layers & depth in layouts
@@ -103,10 +116,11 @@ export default class extends AbstractView {
             <h2>Role: UX/UI Design, Animation </h2>
             <h2>2018</h2>
         </div>
-        `
-    }
-    kish() {
-        return `
+        `;
+  }
+
+  kish() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>Kish — <br/>
             personal website for presenting developers skills and competencies.  
@@ -123,10 +137,11 @@ export default class extends AbstractView {
             <h2>Role: UX/UI Design, Animation </h2>
             <h2>2017</h2>
         </div>
-        `
-    }
-    qslim() {
-        return `
+        `;
+  }
+
+  qslim() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>QuickSlim — <br/>
             running app for weight loss. It creates the best city routes, tracks your calories and makes the online community   
@@ -142,10 +157,11 @@ export default class extends AbstractView {
           <h2>Role: UX/UI Design, Animation </h2>
           <h2>2017</h2>
         </div>
-        `
-    }
-    conc17() {
-        return `
+        `;
+  }
+
+  conc17() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>Concepts’17 — <br/>
             half-commercial concepts for agency and portfolio. Started mixing non-regular grid, layouts and cursor effects.
@@ -162,10 +178,11 @@ export default class extends AbstractView {
           <h2>Role: UX/UI Design, Animation </h2>
           <h2>2017</h2>
         </div>
-        `
-    }
-    popTube() {
-        return `
+        `;
+  }
+
+  popTube() {
+    return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>PopTube — <br/>
             commercial concept of publishing platform for artist. 
@@ -182,37 +199,46 @@ export default class extends AbstractView {
           <h2>Role: UX/UI Design, Animation </h2>
           <h2>2016</h2>
         </div>
-        `
+        `;
+  }
+
+  getSlide() {
+    switch (this.params.id) {
+      case '1':
+        return this.tele2();
+        break;
+
+      case '2':
+        return this.modular();
+        break;
+
+      case '3':
+        return this.conc18();
+        break;
+
+      case '4':
+        return this.kish();
+        break;
+
+      case '5':
+        return this.qslim();
+        break;
+
+      case '6':
+        return this.conc17();
+        break;
+
+      case '7':
+        return this.popTube();
+        break;
+
+      default:
+        return 'something is wrong';
     }
-    getSlide() {
-        switch (this.params.id) {
-            case '1':
-                return this.tele2();
-                break;
-            case '2':
-                return this.modular();
-                break;
-            case '3': 
-                return this.conc18();
-                break;
-            case '4': 
-                return this.kish();
-                break;
-            case '5': 
-                return this.qslim();
-                break;
-            case '6':
-                return this.conc17();
-                break;
-            case '7':
-                return this.popTube();
-                break;
-            default:
-                return 'something is wrong'
-        }
-    }
-    async getHtml() {
-        return `
+  }
+
+  async getHtml() {
+    return `
         <main class="works-container slideInUp" >
             ${this.getSlide()}
 
@@ -241,6 +267,7 @@ export default class extends AbstractView {
           </div>
           
         </main>
-        `
-    }
+        `;
+  }
+
 }

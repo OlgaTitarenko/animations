@@ -1,10 +1,10 @@
 import AbstractView from './AbstractView.js';
-
 export default class extends AbstractView {
   constructor(params) {
     super(params);
   }
-  mainFunction()  {
+
+  mainFunction() {
     this.cursorAnimation();
     this.hoverVideo();
   }
@@ -15,31 +15,27 @@ export default class extends AbstractView {
     let to = 0;
     let from = 0;
     let first = false;
+    const list = document.querySelectorAll('.hover-this'); // set up our WebGL context and append the canvas to our wrapper
 
-    const list = document.querySelectorAll('.hover-this');
-
-    // set up our WebGL context and append the canvas to our wrapper
     const curtains = new Curtains({
       container: "canvas",
-      watchScroll: false, // no need to listen for the scroll in this example
+      watchScroll: false,
+      // no need to listen for the scroll in this example
       pixelRatio: Math.min(1.5, window.devicePixelRatio) // limit pixel ratio for performance
-    });
 
-    // handling errors
+    }); // handling errors
+
     curtains.onError(() => {
       // we will add a class to the document body
-      document.body.classList.add("no-curtains", "curtains-ready");
+      document.body.classList.add("no-curtains", "curtains-ready"); // display an error message
 
-      // display an error message
       document.getElementById("enter-site").innerHTML = "There has been an error while initiating the WebGL context.";
     }).onContextLost(() => {
       // on context lost, try to restore the context
       curtains.restoreContext();
-    });
+    }); // get our plane element
 
-    // get our plane element
     const planeElements = document.getElementsByClassName("multi-textures");
-
     const vs = `
           precision mediump float;
           // default mandatory variables
@@ -69,7 +65,6 @@ export default class extends AbstractView {
               vVertexPosition = aVertexPosition;
           }
       `;
-
     const fs = `
           precision mediump float;
           varying vec3 vVertexPosition;
@@ -134,9 +129,8 @@ export default class extends AbstractView {
               finalColor = vec4(finalColor.rgb * finalColor.a, finalColor.a);
               gl_FragColor = finalColor;
           }
-      `;
+      `; // some basic parameters
 
-    // some basic parameters
     const params = {
       vertexShader: vs,
       fragmentShader: fs,
@@ -144,46 +138,40 @@ export default class extends AbstractView {
         transitionTimer: {
           name: "uTransitionTimer",
           type: "1f",
-          value: 0,
+          value: 0
         },
         from: {
           name: "uFrom",
           type: "1f",
-          value: 0,
+          value: 0
         },
         to: {
           name: "uTo",
           type: "1f",
-          value: 0,
+          value: 0
         }
       }
     };
+    const multiTexturesPlane = new Plane(curtains, planeElements[0], params); // create our plane
 
-    const multiTexturesPlane = new Plane(curtains, planeElements[0], params);
-
-    // create our plane
     multiTexturesPlane.onReady(() => {
       // display the button
-      document.body.classList.add("curtains-ready");
+      document.body.classList.add("curtains-ready"); // click to play the videos
 
-      // click to play the videos
-      
       function animateVideo(arg) {
-
         let element;
+
         if (arg.classList) {
           element = arg;
         } else {
-          element = arg.target
+          element = arg.target;
         }
 
         if (activeTexture === -1) {
           document.body.classList.add("video-started");
           activeTexture = +element.dataset.item;
-
           multiTexturesPlane.playVideos();
           transitionTimer = 0;
-
           multiTexturesPlane.uniforms.to.value = activeTexture;
           curtains.nextRender(() => {
             multiTexturesPlane.videos.forEach((video, key) => {
@@ -199,9 +187,8 @@ export default class extends AbstractView {
 
           from = activeTexture;
           multiTexturesPlane.uniforms.from.value = activeTexture;
+          activeTexture = +element.dataset.item; // transitionTimer = 0;
 
-          activeTexture = +element.dataset.item;
-          // transitionTimer = 0;
           multiTexturesPlane.uniforms.to.value = activeTexture;
           first = true;
           multiTexturesPlane.videos[activeTexture].play();
@@ -210,30 +197,32 @@ export default class extends AbstractView {
 
       function hideVideo(arg) {
         let element;
+
         if (arg.classList) {
           element = arg;
-        } else  {
-          element = arg.target
+        } else {
+          element = arg.target;
         }
+
         if (element.classList.contains('hover-this')) {
           return null;
         }
+
         if (activeTexture !== -1) {
           document.body.classList.remove("video-started");
           activeTexture = -1;
         }
       }
 
-      
       let timer = null;
 
       function scrollCursor(e) {
-        if(timer !== null) {
+        if (timer !== null) {
           clearTimeout(timer);
         }
-        timer = setTimeout(function() {
+
+        timer = setTimeout(function () {
           const cursor = document.querySelector('.cursor');
-         
           const element = document.elementFromPoint(parseInt(cursor.style.left), parseInt(cursor.style.top));
 
           if (element.classList.contains('hover-this')) {
@@ -245,25 +234,19 @@ export default class extends AbstractView {
       }
 
       list.forEach(item => {
-        item.removeEventListener("mousemove", animateVideo);
-        //item.addEventListener('scroll', scrollCursor);
+        item.removeEventListener("mousemove", animateVideo); //item.addEventListener('scroll', scrollCursor);
       });
-      document.querySelector('.home-container').removeEventListener('mousemove', hideVideo)
-      window.removeEventListener('scroll',scrollCursor);
-
+      document.querySelector('.home-container').removeEventListener('mousemove', hideVideo);
+      window.removeEventListener('scroll', scrollCursor);
       list.forEach(item => {
-        item.addEventListener("mousemove", animateVideo);
-        //item.addEventListener('scroll', scrollCursor);
+        item.addEventListener("mousemove", animateVideo); //item.addEventListener('scroll', scrollCursor);
       });
-      document.querySelector('.home-container').addEventListener('mousemove', hideVideo)
-      window.addEventListener('scroll',scrollCursor);
-
+      document.querySelector('.home-container').addEventListener('mousemove', hideVideo);
+      window.addEventListener('scroll', scrollCursor);
     }).onRender(() => {
-
       // if(activeTexture === 1) {
       //     // lerp values to smoothen animation
       //     transitionTimer = (1 - 0.05) * transitionTimer + 0.05 * 60;
-
       //     // transition is over, pause previous video
       //     if(transitionTimer >= 59 && transitionTimer !== 60) {
       //         transitionTimer = 60;
@@ -273,23 +256,20 @@ export default class extends AbstractView {
       // else {
       //     // lerp values to smoothen animation
       //     transitionTimer = (1 - 0.05) * transitionTimer;
-
       //     // transition is over, pause previous video
       //     if(transitionTimer <= 1 && transitionTimer !== 0) {
       //         transitionTimer = 0;
       //         multiTexturesPlane.videos[1].pause();
       //     }
       // }
-
       // update our transition timer uniform
-
       if (first && transitionTimer === 60) {
         first = false;
         transitionTimer = 0;
       }
-      transitionTimer = (1 - 0.05) * transitionTimer + 0.05 * 60;
 
-      // transition is over, pause previous video
+      transitionTimer = (1 - 0.05) * transitionTimer + 0.05 * 60; // transition is over, pause previous video
+
       if (transitionTimer >= 59 && transitionTimer !== 60) {
         transitionTimer = 60;
         multiTexturesPlane.videos.forEach((video, key) => {
@@ -355,4 +335,5 @@ export default class extends AbstractView {
         </main>
         `;
   }
+
 }
