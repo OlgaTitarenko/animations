@@ -19,7 +19,7 @@ function style() {
     .pipe(gulp.dest('./build/css'))
 }
 function script() {
-  return gulp.src(['build/js/views/*.js'])
+  return gulp.src(['./src/views/*.js'])
     .pipe(babel())
     .pipe(gulp.dest('build/assets/js/app'))
 }

@@ -4,44 +4,47 @@ export default class extends AbstractView {
     constructor(params) {
         super(params);
         this.params = params;
+        this.list = ['tele2', 'modular', 'concepts18', 'kish', 'quickslim', 'concepts17', 'poptube']
     }
     mainFunction () {
         this.cursorAnimation();
        // this.routerTo();
     }
     getNext () {
-        if (this.params.id === '7') {
-            return '1'
+        let id = this.list.indexOf(this.params.id);
+        if (id === (this.list.length - 1)) {
+            return this.list[0]
         }
-        return (+this.params.id + 1) + '' 
+        return this.list[id + 1]; 
     }
     getPrew () {
-        if (this.params.id == '1') {
-            return '7';
+      let id = this.list.indexOf(this.params.id);
+        if (id == 0 ) {
+            return this.list[this.list.length - 1];
         }
-        return (+this.params.id - 1) + ''
+        return this.list[id - 1]
     }
     getVideo(item) {
         switch (item) {
-            case '1': 
+            case 'tele2': 
                 return `<video src="/build/assets/works/Tl_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case '2' :
+            case 'modular' :
                 return `<video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case '3' : 
+            case 'concepts18' : 
                 return `<video src="/build/assets/works/Cnc_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case '4' : 
+            case 'kish' : 
                 return `<video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case '5': 
+            case 'quickslim': 
                 return `<video src="/build/assets/works/QS_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case '6' : 
+            case 'concepts17' : 
                 return `<video src="/build/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>`
                 break;
-            case '7': 
+            case 'poptube': 
                 return `<video src="/build/assets/works/Pt_1.mp4" autoplay muted loop="true"></video>`
                 break;
         }
@@ -50,9 +53,9 @@ export default class extends AbstractView {
         return `
         <div class="about-text">
             <h2><span class="about-text-space"></span>Modular — <br/>
-                generative layouts for portfolio</h2>
-            <p>Website creating by dynamic modular grid and 5x2//8x10 ratio. All content isn't commercial and using by
-                presenting purposes</p>
+                generative layouts for portfolio
+            Website creating by dynamic modular grid and 5x2//8x10 ratio. All content isn't commercial and using by
+                presenting purposes</h2>
         </div>
         <div class="works-content">
             <video src="/build/assets/works/md_1.mp4" muted controls></video>
@@ -186,25 +189,25 @@ export default class extends AbstractView {
     }
     getSlide() {
         switch (this.params.id) {
-            case '1':
+            case 'tele2':
                 return this.tele2();
                 break;
-            case '2':
+            case 'modular':
                 return this.modular();
                 break;
-            case '3': 
+            case 'concepts18': 
                 return this.conc18();
                 break;
-            case '4': 
+            case 'kish': 
                 return this.kish();
                 break;
-            case '5': 
+            case 'quickslim': 
                 return this.qslim();
                 break;
-            case '6':
+            case 'concepts17':
                 return this.conc17();
                 break;
-            case '7':
+            case 'poptube':
                 return this.popTube();
                 break;
             default:

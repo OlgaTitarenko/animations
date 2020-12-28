@@ -234,34 +234,24 @@ export default class extends AbstractView {
       }
 
       list.forEach(item => {
-        item.removeEventListener("mousemove", animateVideo); //item.addEventListener('scroll', scrollCursor);
+        item.removeEventListener("mousemove", animateVideo);
       });
       document.querySelector('.home-container').removeEventListener('mousemove', hideVideo);
-      window.removeEventListener('scroll', scrollCursor);
+      console.log(document.querySelector('.home-container'));
+
+      if (document.querySelector('.home-container')) {
+        window.removeEventListener('scroll', scrollCursor);
+      }
+
       list.forEach(item => {
-        item.addEventListener("mousemove", animateVideo); //item.addEventListener('scroll', scrollCursor);
+        item.addEventListener("mousemove", animateVideo);
       });
       document.querySelector('.home-container').addEventListener('mousemove', hideVideo);
-      window.addEventListener('scroll', scrollCursor);
+
+      if (document.querySelector('.home-container')) {
+        window.addEventListener('scroll', scrollCursor);
+      }
     }).onRender(() => {
-      // if(activeTexture === 1) {
-      //     // lerp values to smoothen animation
-      //     transitionTimer = (1 - 0.05) * transitionTimer + 0.05 * 60;
-      //     // transition is over, pause previous video
-      //     if(transitionTimer >= 59 && transitionTimer !== 60) {
-      //         transitionTimer = 60;
-      //         multiTexturesPlane.videos[0].pause();
-      //     }
-      // }
-      // else {
-      //     // lerp values to smoothen animation
-      //     transitionTimer = (1 - 0.05) * transitionTimer;
-      //     // transition is over, pause previous video
-      //     if(transitionTimer <= 1 && transitionTimer !== 0) {
-      //         transitionTimer = 0;
-      //         multiTexturesPlane.videos[1].pause();
-      //     }
-      // }
       // update our transition timer uniform
       if (first && transitionTimer === 60) {
         first = false;
@@ -293,25 +283,25 @@ export default class extends AbstractView {
 
             <div class="list ">
               <h2>
-                <a href="/works/1" class="hover-this" data-item="0" data-link>Tele2</a>
+                <a href="/works/tele2" class="hover-this" data-item="0" data-link>Tele2</a>
               </h2>
               <h2>
-                <a href="/works/2" class="hover-this" data-item="1" data-link>Modular</a>
+                <a href="/works/modular" class="hover-this" data-item="1" data-link>Modular</a>
               </h2>
               <h2>
-                <a href="/works/3" class="hover-this" data-item="2" data-link>Concepts'18</a>
+                <a href="/works/concepts18" class="hover-this" data-item="2" data-link>Concepts'18</a>
               </h2>
               <h2>
-                <a href="/works/4" class="hover-this" data-item="3" data-link>Kish</a>
+                <a href="/works/kish" class="hover-this" data-item="3" data-link>Kish</a>
               </h2>
               <h2>
-                <a href="/works/5" class="hover-this" data-item="4" data-link>Quick slim</a>
+                <a href="/works/quickslim" class="hover-this" data-item="4" data-link>Quick slim</a>
               </h2>
               <h2>
-                <a href="/works/6" class="hover-this" data-item="5" data-link>Concepts'17</a>
+                <a href="/works/concepts17" class="hover-this" data-item="5" data-link>Concepts'17</a>
               </h2>
               <h2>
-                <a href="/works/7" class="hover-this" data-item="6" data-link>Pop tube</a>
+                <a href="/works/poptube" class="hover-this" data-item="6" data-link>Pop tube</a>
               </h2>
             </div>
 

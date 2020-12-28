@@ -1,6 +1,6 @@
-import Home from './views/Home.js';
-import About from './views/About.js';
-import Works from './views/Works.js';
+import Home from './Home.js';
+import About from './About.js';
+import Works from './Works.js';
 
 const cursor = document.querySelector('.cursor');
 
@@ -32,6 +32,7 @@ const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(
 
 const getParams = match => {
     const values = match.result.slice(1);
+    console.log(match.result);
     const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
 
     return Object.fromEntries(keys.map((key,i) => {
