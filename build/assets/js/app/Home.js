@@ -237,7 +237,6 @@ export default class extends AbstractView {
         item.removeEventListener("mousemove", animateVideo);
       });
       document.querySelector('.home-container').removeEventListener('mousemove', hideVideo);
-      console.log(document.querySelector('.home-container'));
 
       if (document.querySelector('.home-container')) {
         window.removeEventListener('scroll', scrollCursor);
