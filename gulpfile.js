@@ -18,6 +18,7 @@ function style() {
     .pipe(concat('index.css'))
     .pipe(gulp.dest('./build/css'))
 }
+
 function script() {
   return gulp.src(['./src/views/*.js'])
     .pipe(babel())
@@ -27,6 +28,7 @@ function script() {
 function watch() {
  
   gulp.watch('./src/scss/*.scss', style);
+  gulp.watch('./src/views/*.js', script);
 
 }
 
