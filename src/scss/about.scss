@@ -4,57 +4,57 @@
 }
 
 .about-container {
-    padding: 0 20px;
+   padding-right: 20px;
     width: 100vw;
     box-sizing: border-box;
   //  position: relative;
     background-color: #fff;
 
-    #parallax-1{
-      background-image: url('../../build/assets/img/about.png');
-      height: 100%;
-      width: calc(100% - 18vw );
-      margin-top: 113px;
-      margin-left: 18vw;
-      background-size: contain !important;
-      background-repeat: no-repeat;
+  //   #parallax-1{
+  //     background-image: url('../../build/assets/img/about.png');
+  //     height: 100%;
+  //     width: calc(100% - 18vw );
+  //     margin-top: 113px;
+  //     margin-left: 18vw;
+  //     background-size: contain !important;
+  //     background-repeat: no-repeat;
       
-      @media (max-width: 768px) {
-        width: 100%;
-        margin-left: 0;
-      }
+  //     @media (max-width: 768px) {
+  //       width: 100%;
+  //       margin-left: 0;
+  //     }
 
-      > div {
-        padding-top: 57vh;
-        position: relative;
-        width: 100%;
-        max-width: 1540px;
-        left: -18vw;
-        @media (max-width: 1730px) {
-          padding-top: 57%;
-        }
-        @media (max-width: 1500px) {
-          padding-top: 56%;
-        }
-        @media (max-width: 1000px) {
-          padding-top: 54%;
-        }
-        @media (max-width: 768px) {
-          padding-top: 45vh;
-          left: 0;
-        }
-        @media (max-width: 660px) {
-          padding-top: 50vh;
-        }
-        @media (max-width: 480px) {
-          padding-top: 25vh;
-        }
-        @media (max-width: 350px) {
-          padding-top: 100px;
-        }
+  //     > div {
+  //       padding-top: 57vh;
+  //       position: relative;
+  //       width: 100%;
+  //       max-width: 1540px;
+  //       left: -18vw;
+  //       @media (max-width: 1730px) {
+  //         padding-top: 57%;
+  //       }
+  //       @media (max-width: 1500px) {
+  //         padding-top: 56%;
+  //       }
+  //       @media (max-width: 1000px) {
+  //         padding-top: 54%;
+  //       }
+  //       @media (max-width: 768px) {
+  //         padding-top: 45vh;
+  //         left: 0;
+  //       }
+  //       @media (max-width: 660px) {
+  //         padding-top: 50vh;
+  //       }
+  //       @media (max-width: 480px) {
+  //         padding-top: 25vh;
+  //       }
+  //       @media (max-width: 350px) {
+  //         padding-top: 100px;
+  //       }
           
-      }
-  }
+  //     }
+  // }
 }
 
 .about-text {
@@ -96,27 +96,136 @@
     }
 }
 
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  width: calc(100vw - 20px);
+  margin-left: 20px;
+ 
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: white;
+}
+
+.object-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: none;
+  justify-content: center;
+}
+
+.speed-2 {
+  transform: translateZ(-1px) scale(2);
+}
+
+.object {
+  margin-left: 18vw;
+  margin-right: 20px;
+  height: 760px;
+  width: 100%;
+  margin-top: 113px;
+  overflow: hidden;
+
+  @media (max-width: 1440px) {
+    height: 570px;
+  }
+  @media (max-width: 1024px) {
+    height: 400px;
+  }
+  @media (max-width: 768px) {
+    margin-left: 0;
+    height: 380px;
+  }
+  @media (max-width: 600px) {
+    height: 300px;
+  }
+  @media (max-width: 540px) {
+    height: 240px;
+  }
+  @media (max-width: 370px) {
+    height: 150px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.page-content {
+  height: calc(100% + 400px);
+  margin-top: 890px;
+  position: relative;
+  z-index: 3;
+  color: white;
+  mix-blend-mode: difference;
+
+  @media (max-width: 1440px) {
+    margin-top: 690px;
+  }
+  @media (max-width: 1024px) {
+    margin-top: 520px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 500px;
+  }
+  @media (max-width: 600px) {
+    margin-top: 420px;
+  }
+  @media (max-width: 540px) {
+    margin-top: 360px;
+  }
+  @media (max-width: 370px) {
+    margin-top: 270px;
+  }
+
+  .about-text {
+    width: 81%;
+  }
+}
 
 
 
 
-
-// .animate-me {
-//   animation: bounceIn 3s ease-in-out;
+// .parallax {
+//   perspective: 1px;
+//   height: 100vh;
+//   background-color: inherit;
+//   overflow-x: hidden;
+//   overflow-y: auto;
 // }
+// .parallax__layer {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+// }
+// .parallax__layer--base {
+//   transform: translateZ(0);
+//   margin-top: 55vh;
+//   //background-color: inherit;
 
-
-// @keyframes bounceIn {
-//   0% {
-//     transform: scale(0.1);
-//     opacity: 0;
+//   > div {
+//     background-color: inherit !important;
+//     padding-bottom: 100px;
+//     position: relative;
+//     z-index: -1;
+   
+//    height: 100vh;
+// //   padding-top: 80vh;
 //   }
-//   60% {
-//     transform: scale(1.2);
-//     opacity: 1;
-//   }
-//   100% {
-//     transform: scale(1);
+// }
+// .parallax__layer--back {
+//   transform: translateZ(-1px);
+  
+//   img {
+//     position: absolute;
+//     top: calc(118px - 50%);
+//     z-index: 1;
 //   }
 // }
 
