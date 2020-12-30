@@ -184,7 +184,11 @@
 
   .about-text {
     width: 81%;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
   }
+
 }
 
 
