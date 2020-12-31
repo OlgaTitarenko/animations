@@ -61,7 +61,7 @@
     position: relative;
     z-index: 2;
     color: white;
-    mix-blend-mode: difference;
+  //  mix-blend-mode: difference;
 
     @media (max-width: 1024px) {
         width: 100%;
@@ -105,6 +105,8 @@
   overflow-x: hidden;
   overflow-y: auto;
   background-color: white;
+
+  background-blend-mode: difference;
 }
 
 .object-wrapper {
@@ -160,7 +162,7 @@
   margin-top: 890px;
   position: relative;
   z-index: 3;
-  color: white;
+  background-color: initial;
   mix-blend-mode: difference;
 
   @media (max-width: 1440px) {
@@ -189,6 +191,17 @@
     }
   }
 
+  .text.background--light {
+    color: black;
+  }
+  
+  .text.background--dark {
+    color: white;
+  }
+  .text.background--complex {
+    color: gray;
+  }
+  
 }
 
 
