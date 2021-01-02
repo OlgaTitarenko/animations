@@ -20,7 +20,7 @@ export default class extends AbstractView {
         <main class="about-container slideInUp" data-page="about">
           <div class="parallax">
   
-            <div class="object-wrapper speed-2">
+            <div class="object-wrapper ">
               <div class="object">
                 <img class="img" src="/build/assets/img/about.png" alt="" />
 
