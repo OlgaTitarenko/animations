@@ -76,6 +76,8 @@
   overflow: hidden;
   margin-top: 113px;
   margin-bottom: 45px;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 1440px) {
     height: 570px;
