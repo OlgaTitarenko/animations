@@ -16,6 +16,11 @@
     margin-bottom: 45px;
     background-color: white;
     mix-blend-mode: normal;
+    
+    @media (min-width: 1921px) {
+      width: 60%;
+    }
+
     @media (max-width: 768px) {
       width: 100%;
     }
@@ -54,7 +59,6 @@
   align-items: center;
   justify-content: space-between;
   margin-left: 18vw;
-  max-width: 1558px;
   padding-top: 131px;
   padding-bottom: 131px;
   margin-bottom: 45px;
