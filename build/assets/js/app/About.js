@@ -18,18 +18,11 @@ export default class extends AbstractView {
   async getHtml() {
     return `
         <main class="about-container slideInUp" data-page="about">
-          <div class="parallax">
-  
-            <div class="object-wrapper ">
-              <div class="object">
-                <img class="img" src="/build/assets/img/about.png" alt="" />
-
-              </div>
-            </div>
-       
-            <div class="page-content">
-            
-              <div class="about-text">
+          
+          <div class="about-img">
+            <img class="img" src="/build/assets/img/about.png" alt="" />
+          </div>
+          <div class="about-text">
                 <p class='text'><span class="about-text-space"></span>Vitali Senevych is
                     the digital designer interested
                     in pop-culture, alternatives, music
@@ -93,26 +86,14 @@ export default class extends AbstractView {
                   Kyiv, Ukraine
                 </p>
               </div>
-              
-            </div>
-          </div>
+          
+
+
 
         <!--   
         <div class="parallax">
-          <div class="parallax__layer parallax__layer--back">
-            <img src="/build/assets/img/about.png" alt="" />
-          </div>
-  <div class="parallax__layer parallax__layer--base">
-  <div>
-  
-  </div>
+         
 
-  </div>
-</div>
-
-
-        <section class="para" id="parallax-1">
-          <div>
           <div class="about-text">
           <p><span class="about-text-space"></span>Vitali Senevych is
             the digital designer interested
