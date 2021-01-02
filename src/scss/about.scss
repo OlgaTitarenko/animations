@@ -49,9 +49,11 @@
   box-sizing: border-box;
   //  position: relative;
   background-color: #fff;
+
   .about-text {
     width: 81%;
     background-color: white; 
+    padding-bottom: 120px;
   
     p {
       mix-blend-mode: difference;
@@ -59,6 +61,9 @@
   
     @media (max-width: 1024px) {
       width: 100%;
+    }
+    @media (max-width: 768px) {
+      padding-bottom: 60px;
     }
   }
 
