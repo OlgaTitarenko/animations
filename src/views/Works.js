@@ -82,7 +82,11 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Tl_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-            <h2>Agency: Nullgravity</h2>
+            <h2>Agency:
+                <a href="https://www.nullgr.com/" target="_blank" data-link-blank>
+                    Nullgravity
+                </a>
+            </h2>
             <h2>Role: UX/UI Design, Animation </h2>
             <h2>2018</h2>
         </div>
@@ -141,7 +145,11 @@ export default class extends AbstractView {
             <img src="/build/assets/works/QS_3.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-          <h2>Agency: Thinkmobiles</h2>
+          <h2>Agency:
+                <a href="https://thinkmobiles.com/" target="_blank" data-link-blank>
+                    Thinkmobiles
+                </a>
+          </h2>
           <h2>Role: UX/UI Design, Animation </h2>
           <h2>2017</h2>
         </div>
@@ -161,7 +169,6 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Cp_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-          <h2>Agency: Thinkmobiles</h2>
           <h2>Role: UX/UI Design, Animation </h2>
           <h2>2017</h2>
         </div>
@@ -181,7 +188,11 @@ export default class extends AbstractView {
             <img src="/build/assets/works/Pt_4.png" alt="" />
         </div>
         <div class="about-text bottom-text">
-          <h2>Agency: Thinkmobiles</h2>
+          <h2>Agency:
+                <a href="https://thinkmobiles.com/" target="_blank" data-link-blank>
+                    Thinkmobiles
+                </a>
+          </h2>
           <h2>Role: UX/UI Design, Animation </h2>
           <h2>2016</h2>
         </div>
