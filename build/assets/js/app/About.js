@@ -53,7 +53,7 @@ export default class extends AbstractView {
                 </p>
                 <p class='text'>
                   <a href="https://onepagelove.com/vasyl-kish" target="_blank" data-link-blank>
-                    onepagelove.featured — kish
+                    onepagelove — kish
                   </a>
                 </p>
                 <p>
@@ -72,7 +72,7 @@ export default class extends AbstractView {
                 <h2 class='text'><span class="about-text-space"></span>Contacts
                 </h2>
                 <p class='text'>
-                  <a href="mailto:vs@senevych.design" target="_blank" data-link-blank> vs@senevych.design </a>
+                  <a href="mailto:hello@senevych.com" target="_blank" data-link-blank> hello@senevych.com </a>
                 </p>                
                 <p class='text'>
                   <a href="https://www.instagram.com/v.senevych/" target="_blank" data-link-blank>Instagram</a>, 
