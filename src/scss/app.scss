@@ -2,6 +2,10 @@
 * {
     cursor:none;
     font-family: "Akzidenz-Grotesk Pro";
+    
+    ::-webkit-scrollbar { 
+      display: none; 
+    }
 }
 
 html, body {
@@ -12,6 +16,12 @@ html, body {
     font-size: 26px;
     font-family:"Akzidenz-Grotesk Pro", serif;
     overflow-x: hidden;
+    width: calc(100% + 8px);
+}
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 #app {
