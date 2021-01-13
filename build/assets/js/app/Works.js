@@ -37,7 +37,7 @@ export default class extends AbstractView {
         break;
 
       case 'modular':
-        return `<video src="/build/assets/works/md_1.mp4" autoplay muted loop="true"></video>`;
+        return `<video src="/build/assets/works/md_3.mp4" autoplay muted loop="true"></video>`;
         break;
 
       case 'concepts18':
