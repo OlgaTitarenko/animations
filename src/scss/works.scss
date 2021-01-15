@@ -13,7 +13,7 @@
   .about-text {
     margin-top: 45px;
     width: 81%;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     background-color: white;
     mix-blend-mode: normal;
     
@@ -30,6 +30,8 @@
     }
   }
   .about-text.bottom-text {
+    margin-top: 15px;
+    margin-bottom: 45px;
     width: 100%;
     padding-left: calc(18vw - 5px);
     box-sizing: border-box;
@@ -47,6 +49,7 @@
     img {
       width: 100%;
       margin-bottom: 20px;
+      margin-top: -7px;
     }
     video {
       width: 100%;
@@ -59,9 +62,9 @@
   align-items: center;
   justify-content: space-between;
   margin-left: 18vw;
-  padding-top: 131px;
-  padding-bottom: 131px;
-  margin-bottom: 45px;
+  padding-top: 112px;
+  padding-bottom: 112px;
+  margin-bottom: 0px;
   position: relative;
 
   @media (max-width: 768px) {
