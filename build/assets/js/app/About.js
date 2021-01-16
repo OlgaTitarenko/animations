@@ -20,7 +20,7 @@ export default class extends AbstractView {
         <main class="about-container slideInUp" data-page="about">
           
           <div class="about-img">
-            <img class="img" src="/build/assets/img/about.png" alt="" />
+            <img class="img" src="/build/assets/img/about.jpg" alt="" />
           </div>
           <div class="about-text">
                 <p class='text'><span class="about-text-space"></span>Vitali Senevych is
