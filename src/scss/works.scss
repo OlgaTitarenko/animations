@@ -53,6 +53,8 @@
 
   .works-content {
     padding-left: 18vw;
+    display: flex;
+    flex-direction: column;
     
     @media (max-width: 768px) {
       padding-left: 0;
