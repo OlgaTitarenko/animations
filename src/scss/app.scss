@@ -16,7 +16,7 @@ html, body {
     font-size: 26px;
     font-family:"Akzidenz-Grotesk Pro", serif;
     overflow-x: hidden;
-    width: calc(100%);
+    width: calc(100% + 8px);
 }
 
 ::-webkit-scrollbar {
