@@ -72,7 +72,7 @@ export default class extends AbstractView {
         </div>
         <div class="works-content">
             <video src="/build/assets/works/md_1.mp4" muted controls></video>
-            <div><img src="/build/assets/works/md_2.jpg" alt="" /></div>            
+            <div><img src="/build/assets/works/md_2.png" alt="" /></div>            
             <video src="/build/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
         <div class="about-text bottom-text">
