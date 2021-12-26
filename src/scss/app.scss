@@ -118,15 +118,16 @@ main {
     border-radius: 50%;
     background-color: white;
     backface-visibility: hidden;
-    transition: transform 0.2s ease-out;
+    transition: all 0.2s ease-out;
     mix-blend-mode: difference;
     z-index: 1000;
     pointer-events: none;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
   
 .cursor-hover {
-   transform: scale(1.8);
+   //transform: scale(1.8);
+   zoom: 150%;
  }
 
 .slideInUp {
