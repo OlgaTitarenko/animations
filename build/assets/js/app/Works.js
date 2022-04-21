@@ -72,7 +72,9 @@ export default class extends AbstractView {
         </div>
         <div class="works-content">
             <video src="/build/assets/works/md_1.mp4" muted controls></video>
-            <div><img src="/build/assets/works/md_2.png" alt="" /></div>            
+            <div class="image-block">
+                <img src="/build/assets/works/md_2.png" alt="" />
+            </div>            
             <video src="/build/assets/works/md_3.mp4" autoplay muted loop="true"></video>
         </div>
         <div class="about-text bottom-text">
@@ -91,9 +93,15 @@ export default class extends AbstractView {
         </div>
         <div class="works-content">
             <video src="/build/assets/works/Tl_1.mp4" muted controls ></video>
-            <div><img src="/build/assets/works/Tl_2.jpg" alt="" /></div>
-            <div><img src="/build/assets/works/Tl_3.jpg" alt="" /></div>
-            <div><img src="/build/assets/works/Tl_4.jpg" alt="" /></div>
+            <div class="image-block">
+                <img src="/build/assets/works/Tl_2.jpg" alt="" />
+            </div>
+            <div class="image-block">
+                <img src="/build/assets/works/Tl_3.jpg" alt="" />
+            </div>
+            <div class="image-block">
+                <img src="/build/assets/works/Tl_4.jpg" alt="" />
+            </div>
         </div>
         <div class="about-text bottom-text">
             <h2>Agency:
@@ -119,7 +127,9 @@ export default class extends AbstractView {
             <video src="/build/assets/works/Cnc_2.mp4" autoplay muted loop="true"></video>
             <video src="/build/assets/works/Cnc_3.mp4" autoplay muted loop="true"></video>
             <video src="/build/assets/works/Cnc_4.mp4" autoplay muted loop="true"></video>
-            <div><img src="/build/assets/works/Cnc_5.jpg" alt="" /></div>
+            <div class="image-block">
+                <img src="/build/assets/works/Cnc_5.jpg" alt="" />
+            </div>
         </div>
         <div class="about-text bottom-text">
             <h2>Role: UX/UI Design, Animation </h2>
@@ -138,7 +148,9 @@ export default class extends AbstractView {
         <div class="works-content">
             <video src="/build/assets/works/Ks_1.mp4" autoplay muted loop="true"></video>
             <video src="/build/assets/works/Ks_2.mp4" autoplay muted loop="true"></video>
-            <div><img src="/build/assets/works/Ks_3.jpg" alt="" /></div>
+            <div class="image-block">
+                <img src="/build/assets/works/Ks_3.jpg" alt="" />
+            </div>
             <video src="/build/assets/works/Ks_4.mp4" muted controls></video>
             
         </div>
@@ -158,8 +170,12 @@ export default class extends AbstractView {
         </div>
         <div class="works-content">
             <video src="/build/assets/works/QS_1.mp4" autoplay muted loop="true"></video>
-            <div><img src="/build/assets/works/QS_2.jpg" alt="" /></div>
-            <div><img src="/build/assets/works/QS_3.jpg" alt="" /></div>
+            <div class="image-block">
+                <img src="/build/assets/works/QS_2.jpg" alt="" />
+            </div>
+            <div class="image-block">
+                <img src="/build/assets/works/QS_3.jpg" alt="" />
+            </div>
         </div>
         <div class="about-text bottom-text">
           <h2>Agency:
@@ -184,7 +200,9 @@ export default class extends AbstractView {
             <video src="/build/assets/works/Cp_1.mp4" autoplay muted loop="true"></video>
             <video src="/build/assets/works/Cp_2.mp4" autoplay muted loop="true"></video>
             <video src="/build/assets/works/Cp_3.mp4" autoplay muted loop="true"></video>
-            <div><img src="/build/assets/works/Cp_4.jpg" alt="" /></div>
+            <div class="image-block">
+                <img src="/build/assets/works/Cp_4.jpg" alt="" />
+            </div>
         </div>
         <div class="about-text bottom-text">
           <h2>Role: UX/UI Design, Animation </h2>
@@ -203,8 +221,12 @@ export default class extends AbstractView {
         <div class="works-content">
             <video src="/build/assets/works/Pt_1.mp4" muted controls></video>
             <video src="/build/assets/works/Pt_2.mp4" autoplay muted loop="true"></video>
-            <div><img src="/build/assets/works/Pt_3.jpg" alt="" /></div>
-            <div><img src="/build/assets/works/Pt_4.jpg" alt="" /></div>
+            <div class="image-block">
+                <img src="/build/assets/works/Pt_3.jpg" alt="" />
+            </div>
+            <div class="image-block">
+                <img src="/build/assets/works/Pt_4.jpg" alt="" />
+            </div>
         </div>
         <div class="about-text bottom-text">
           <h2>Agency:

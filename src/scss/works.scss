@@ -59,6 +59,9 @@
     @media (max-width: 768px) {
       padding-left: 0;
     }
+    .image-block {
+      display: flex;
+    }
     
     img {
       width: 100%;
