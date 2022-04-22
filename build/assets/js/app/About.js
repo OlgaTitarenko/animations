@@ -23,19 +23,30 @@ export default class extends AbstractView {
             <img class="img" src="/build/assets/img/about.jpg" alt="" />
           </div>
           <div class="about-text">
-                <p class='text'><span class="about-text-space"></span>Vitali Senevych is
-                    a digital designer interested
-                    in pop-culture, alternatives, music
-                    and motion.
+                <p class='text'><span class="about-text-space"></span>Vitali Senevych is Digital
+                 and UX/UI Designer based in
+                 Uzhhorod, Ukraine.
                 </p>
-                <p class='text'><span class="about-text-space"></span>He creates web & apps services, interactive and visual experience to fill that empty space. He works at the 
-                  <a href="https://alty.co/" target="_blank" data-link-blank>Alty, </a> where he collaborates with equally passionate people on saucy projects.    
+                <p class='text'><span class="about-text-space"></span>He creates websites & apps
+                with thoughtful interactive and visual experiences. His passion for style goes
+                with his technology interest helps him to deliver a unique vision for brands
+                and products.    
                 </p>
               </div>
 
               <div class="about-text">
-                <h2 class='text'><span class="about-text-space"></span>Aw & Achievements
+                <h2 class='text'><span class="about-text-space"></span>Awards & Achievements
                 </h2>
+                <p class='text'>
+                  <a href="https://www.awwwards.com/sites/vitali-senevych-portfolio" target="_blank" data-link-blank>
+                    awwards — personal
+                  </a>
+                </p>
+                <p class='text'>
+                  <a href="https://www.cssdesignawards.com/sites/vitali-senevych-portfolio/38482/" target="_blank" data-link-blank>
+                    cssda — personal
+                  </a>
+                </p>
                 <p class='text'>
                   <a href="https://www.behance.net/gallery/47848749/Pop-Tube-Concept" target="_blank" data-link-blank>
                     behance — pop tube
@@ -72,7 +83,7 @@ export default class extends AbstractView {
                 <h2 class='text'><span class="about-text-space"></span>Contacts
                 </h2>
                 <p class='text'>
-                  <a href="mailto:hello@senevych.com" target="_blank" data-link-blank> hello@senevych.com </a>
+                  <a href="mailto:v.senevych@gmail.com" target="_blank" data-link-blank> v.senevych@gmail.com </a>
                 </p>                
                 <p class='text'>
                   <a href="https://www.instagram.com/v.senevych/" target="_blank" data-link-blank>Instagram</a>, 
@@ -83,7 +94,7 @@ export default class extends AbstractView {
                   <a href="https://vimeo.com/senevych" target="_blank" data-link-blank>Vimeo</a>
                 </p>
                 <p class='text'>
-                  Kyiv, Ukraine
+                  Uzhhorod, Ukraine
                 </p>
               </div>
           
