@@ -10,6 +10,3 @@ on vps
 sudo service apatch2 stop
 3. restart server
 pm2 restart server.js
-
-user dev
-passwd 5*f43bYPYrGS
